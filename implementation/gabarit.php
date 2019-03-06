@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>New Store A Ecommerce Category Flat Bootstarp Resposive Website Template | Signle :: w3layouts</title>
+    <title>New Store A Ecommerce Category Flat Bootstarp Resposive Website Template | Login :: w3layouts</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
@@ -20,9 +20,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
     <script type="text/javascript" src="js/memenu.js"></script>
     <script>$(document).ready(function(){$(".memenu").memenu();});</script>
-
-
-    <script src="js/main.js"></script>
     <script src="js/simpleCart.min.js"> </script>
 </head>
 <body>
@@ -38,8 +35,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="header-left">
                 <ul>
-                    <li ><a class="lock"  href="login.html"  >Login</a></li>
-                    <li><a class="lock" href="register.html"  >Créer un compte</a></li>
+                    <li ><a class="lock"  href="login.php"  >Login</a></li>
+                    <li><a class="lock" href="register.php"  >Créer un compte</a></li>
                     <li>
                     </li>
 
@@ -53,45 +50,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
         <div class="head-top">
             <div class="logo">
-                <a href="index.html"><img src="images/logo.png" alt=""></a>
+                <a href="index.php"><img src="images/logo.png" alt=""></a>
             </div>
             <div class=" h_menu4">
                 <ul class="memenu skyblue">
-                    <li class="active grid"><a class="color8" href="index.html">Home</a></li>
+                    <li> <!--class="active grid"-->  <a class="color6" href="index.php">Home</a></li>
                     <li><a class="color1" href="#">Objets</a>
                         <div class="mepanel">
                             <div class="row">
                                 <div class="col1">
                                     <div class="h_nav">
                                         <ul>
-                                            <li><a href="products.html">Accessories</a></li>
-                                            <li><a href="products.html">Bags</a></li>
-                                            <li><a href="products.html">Caps & Hats</a></li>
-                                            <li><a href="products.html">Hoodies & Sweatshirts</a></li>
-                                            <li><a href="products.html">Jackets & Coats</a></li>
-                                            <li><a href="products.html">Jeans</a></li>
-                                            <li><a href="products.html">Jewellery</a></li>
-                                            <li><a href="products.html">Jumpers & Cardigans</a></li>
-                                            <li><a href="products.html">Leather Jackets</a></li>
-                                            <li><a href="products.html">Long Sleeve T-Shirts</a></li>
-                                            <li><a href="products.html">Loungewear</a></li>
+                                            <li><a href="products.php">Accessories</a></li>
+                                            <li><a href="products.php">Bags</a></li>
+                                            <li><a href="products.php">Caps & Hats</a></li>
+                                            <li><a href="products.php">Hoodies & Sweatshirts</a></li>
+                                            <li><a href="products.php">Jackets & Coats</a></li>
+                                            <li><a href="products.php">Jeans</a></li>
+                                            <li><a href="products.php">Jewellery</a></li>
+                                            <li><a href="products.php">Jumpers & Cardigans</a></li>
+                                            <li><a href="products.php">Leather Jackets</a></li>
+                                            <li><a href="products.php">Long Sleeve T-Shirts</a></li>
+                                            <li><a href="products.php">Loungewear</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col1">
                                     <div class="h_nav">
                                         <ul>
-                                            <li><a href="products.html">Shirts</a></li>
-                                            <li><a href="products.html">Shoes, Boots & Trainers</a></li>
-                                            <li><a href="products.html">Shorts</a></li>
-                                            <li><a href="products.html">Suits & Blazers</a></li>
-                                            <li><a href="products.html">Sunglasses</a></li>
-                                            <li><a href="products.html">Sweatpants</a></li>
-                                            <li><a href="products.html">Swimwear</a></li>
-                                            <li><a href="products.html">Trousers & Chinos</a></li>
-                                            <li><a href="products.html">T-Shirts</a></li>
-                                            <li><a href="products.html">Underwear & Socks</a></li>
-                                            <li><a href="products.html">Vests</a></li>
+                                            <li><a href="products.php">Shirts</a></li>
+                                            <li><a href="products.php">Shoes, Boots & Trainers</a></li>
+                                            <li><a href="products.php">Shorts</a></li>
+                                            <li><a href="products.php">Suits & Blazers</a></li>
+                                            <li><a href="products.php">Sunglasses</a></li>
+                                            <li><a href="products.php">Sweatpants</a></li>
+                                            <li><a href="products.php">Swimwear</a></li>
+                                            <li><a href="products.php">Trousers & Chinos</a></li>
+                                            <li><a href="products.php">T-Shirts</a></li>
+                                            <li><a href="products.php">Underwear & Socks</a></li>
+                                            <li><a href="products.php">Vests</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -99,15 +96,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="h_nav">
                                         <h4>Popular Brands</h4>
                                         <ul>
-                                            <li><a href="products.html">Levis</a></li>
-                                            <li><a href="products.html">Persol</a></li>
-                                            <li><a href="products.html">Nike</a></li>
-                                            <li><a href="products.html">Edwin</a></li>
-                                            <li><a href="products.html">New Balance</a></li>
-                                            <li><a href="products.html">Jack & Jones</a></li>
-                                            <li><a href="products.html">Paul Smith</a></li>
-                                            <li><a href="products.html">Ray-Ban</a></li>
-                                            <li><a href="products.html">Wood Wood</a></li>
+                                            <li><a href="products.php">Levis</a></li>
+                                            <li><a href="products.php">Persol</a></li>
+                                            <li><a href="products.php">Nike</a></li>
+                                            <li><a href="products.php">Edwin</a></li>
+                                            <li><a href="products.php">New Balance</a></li>
+                                            <li><a href="products.php">Jack & Jones</a></li>
+                                            <li><a href="products.php">Paul Smith</a></li>
+                                            <li><a href="products.php">Ray-Ban</a></li>
+                                            <li><a href="products.php">Wood Wood</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -120,34 +117,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="col1">
                                     <div class="h_nav">
                                         <ul>
-                                            <li><a href="products.html">Accessories</a></li>
-                                            <li><a href="products.html">Bags</a></li>
-                                            <li><a href="products.html">Caps & Hats</a></li>
-                                            <li><a href="products.html">Hoodies & Sweatshirts</a></li>
-                                            <li><a href="products.html">Jackets & Coats</a></li>
-                                            <li><a href="products.html">Jeans</a></li>
-                                            <li><a href="products.html">Jewellery</a></li>
-                                            <li><a href="products.html">Jumpers & Cardigans</a></li>
-                                            <li><a href="products.html">Leather Jackets</a></li>
-                                            <li><a href="products.html">Long Sleeve T-Shirts</a></li>
-                                            <li><a href="products.html">Loungewear</a></li>
+                                            <li><a href="products.php">Accessories</a></li>
+                                            <li><a href="products.php">Bags</a></li>
+                                            <li><a href="products.php">Caps & Hats</a></li>
+                                            <li><a href="products.php">Hoodies & Sweatshirts</a></li>
+                                            <li><a href="products.php">Jackets & Coats</a></li>
+                                            <li><a href="products.php">Jeans</a></li>
+                                            <li><a href="products.php">Jewellery</a></li>
+                                            <li><a href="products.php">Jumpers & Cardigans</a></li>
+                                            <li><a href="products.php">Leather Jackets</a></li>
+                                            <li><a href="products.php">Long Sleeve T-Shirts</a></li>
+                                            <li><a href="products.php">Loungewear</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col1">
                                     <div class="h_nav">
                                         <ul>
-                                            <li><a href="products.html">Shirts</a></li>
-                                            <li><a href="products.html">Shoes, Boots & Trainers</a></li>
-                                            <li><a href="products.html">Shorts</a></li>
-                                            <li><a href="products.html">Suits & Blazers</a></li>
-                                            <li><a href="products.html">Sunglasses</a></li>
-                                            <li><a href="products.html">Sweatpants</a></li>
-                                            <li><a href="products.html">Swimwear</a></li>
-                                            <li><a href="products.html">Trousers & Chinos</a></li>
-                                            <li><a href="products.html">T-Shirts</a></li>
-                                            <li><a href="products.html">Underwear & Socks</a></li>
-                                            <li><a href="products.html">Vests</a></li>
+                                            <li><a href="products.php">Shirts</a></li>
+                                            <li><a href="products.php">Shoes, Boots & Trainers</a></li>
+                                            <li><a href="products.php">Shorts</a></li>
+                                            <li><a href="products.php">Suits & Blazers</a></li>
+                                            <li><a href="products.php">Sunglasses</a></li>
+                                            <li><a href="products.php">Sweatpants</a></li>
+                                            <li><a href="products.php">Swimwear</a></li>
+                                            <li><a href="products.php">Trousers & Chinos</a></li>
+                                            <li><a href="products.php">T-Shirts</a></li>
+                                            <li><a href="products.php">Underwear & Socks</a></li>
+                                            <li><a href="products.php">Vests</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -155,22 +152,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="h_nav">
                                         <h4>Popular Brands</h4>
                                         <ul>
-                                            <li><a href="products.html">Levis</a></li>
-                                            <li><a href="products.html">Persol</a></li>
-                                            <li><a href="products.html">Nike</a></li>
-                                            <li><a href="products.html">Edwin</a></li>
-                                            <li><a href="products.html">New Balance</a></li>
-                                            <li><a href="products.html">Jack & Jones</a></li>
-                                            <li><a href="products.html">Paul Smith</a></li>
-                                            <li><a href="products.html">Ray-Ban</a></li>
-                                            <li><a href="products.html">Wood Wood</a></li>
+                                            <li><a href="products.php">Levis</a></li>
+                                            <li><a href="products.php">Persol</a></li>
+                                            <li><a href="products.php">Nike</a></li>
+                                            <li><a href="products.php">Edwin</a></li>
+                                            <li><a href="products.php">New Balance</a></li>
+                                            <li><a href="products.php">Jack & Jones</a></li>
+                                            <li><a href="products.php">Paul Smith</a></li>
+                                            <li><a href="products.php">Ray-Ban</a></li>
+                                            <li><a href="products.php">Wood Wood</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li><a class="color4" href="blog.html">Nous Contacter</a></li>
+                    <li><a class="color4" href="contact.php">Nous Contacter</a></li>
                 </ul>
             </div>
 
@@ -188,40 +185,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="footer">
     <div class="container">
         <div class="footer-top-at">
-
-            <div class="col-md-4 amet-sed">
-                <h4>MORE INFO</h4>
-                <ul class="nav-bottom">
-                    <li><a href="#">How to order</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="contact.html">Location</a></li>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Membership</a></li>
-                </ul>
-            </div>
             <div class="col-md-4 amet-sed ">
+            </div>
+            <div class="col-md-4 amet-sed" align="center">
                 <h4>CONTACT US</h4>
 
                 <p>
                     Contrary to popular belief</p>
                 <p>The standard chunk</p>
                 <p>office:  +12 34 995 0792</p>
-                <ul class="social">
-                    <li><a href="#"><i> </i></a></li>
-                    <li><a href="#"><i class="twitter"> </i></a></li>
-                    <li><a href="#"><i class="rss"> </i></a></li>
-                    <li><a href="#"><i class="gmail"> </i></a></li>
 
-                </ul>
-            </div>
-            <div class="col-md-4 amet-sed">
-                <h4>Newsletter</h4>
-                <p>Sign Up to get all news update
-                    and promo</p>
-                <form>
-                    <input type="text" value="" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
-                    <input type="submit" value="Sign up">
-                </form>
             </div>
             <div class="clearfix"> </div>
         </div>

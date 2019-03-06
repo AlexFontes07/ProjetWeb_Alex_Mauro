@@ -79,6 +79,7 @@ a.item_add {
 /*----*/
 .header {
   border-bottom: 1px solid #000;
+	background-color:#EBECDA;
 }
 .header-top{
 	background: #000;
@@ -86,42 +87,43 @@ a.item_add {
 }
 .search{
 	position:relative;
-	  float: left;
-  width: 25%;
-  background-color: #fff;
-    margin-top: 11px;
+	float: left;
+	width: 30%;
+	background-color: #000000;
+	margin-top: 11px;
 }
 .search input[type="text"] {
 	outline: none;
-  padding: 3px 15px;
-  background: none;
-  width: 91%;
-  border: none;
-  font-size: 1.2em;
-  color: #000; 
-   font-weight: 700; 	
+	padding: 3px 15px;
+	background: none;
+	width: 91%;
+	border: none;
+	font-size: 1.2em;
+	color: #000;
+	font-weight: 700;
+	background-color: #FFFFFF;
 }
-.search input[type="submit"] {	
+.search input[type="submit"] {
 	border: none;
 	cursor: pointer;
 	position: absolute;
 	outline: none;
-	 top: 0px;
-  right: 0px;
-  background: #c7c7c7;
-  font-size: 1.2em;
-  color: #000;
-  padding: 3px;
-  font-weight: 700;
+	top: 0px;
+	right: 0px;
+	background: #c7c7c7;
+	font-size: 1.2em;
+	color: #000;
+	padding: 3px;
+	font-weight: 700;
 }
 .search input[type="submit"]:hover {
-  background: #EF5F21;  
-  color: #fff;
-    transition: 0.5s all;
-  -webkit-transition: 0.5s all;
-  -o-transition: 0.5s all;
-  -moz-transition: 0.5s all;
-  -ms-transition: 0.5s all;
+	background: #EF5F21;
+	color: #fff;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
 }
 .header-left{
 	float: right;
@@ -147,6 +149,7 @@ a.item_add {
 }
 .head-top {
   padding: 1em 0;
+	background-color:#EBECDA;
 }
 /* start menu */
 .h_menu4 {
