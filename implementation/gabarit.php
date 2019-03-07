@@ -188,19 +188,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="col-md-4 amet-sed ">
             </div>
             <div class="col-md-4 amet-sed" align="center">
-                <h4>CONTACT US</h4>
+                <h4>Contactez nous</h4>
 
-                <p>
-                    Contrary to popular belief</p>
-                <p>The standard chunk</p>
-                <p>office:  +12 34 995 0792</p>
+                <p>Avenue de la gare 14</p>
+                <p>1450 Sainte-Croix</p>
+                <p>Tél:  +12 34 995 0792</p>
 
             </div>
             <div class="clearfix"> </div>
         </div>
     </div>
     <div class="footer-class">
-        <p >© 2015 New store All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+        <p >© 2019 New store All Rights Reserved | Design by  <a href="https://w3layouts.com/new-store-a-flat-ecommerce-bootstrap-responsive-web-template/" target="_blank">BuyHard</a> </p>
     </div>
 </div>
 </body>
