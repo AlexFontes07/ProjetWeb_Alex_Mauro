@@ -5,6 +5,7 @@
  * Date: 11.03.2019
  * Time: 08:14
  */
+require "model/model.php";
 function openSingle_contact(){
 require "view/single_contact.php";
 }
@@ -27,9 +28,14 @@ function openContact(){
     require "view/contact.php";
 }
 function login($Donnees){
-    require "model/model.php";
-    if(validLogin()){
-
+    $userId=getUserId($Donnees["Email"],$Donnees["Password"]);
+    if($userId!=-1){
+        $_SESSION["ID"]=$userId;
+        $_SESSION["Prenom"]=getFName($userId);
+        $_SESSION["Nom"]=getLName($userId);
+        $_SESSION["Email"]=getEmail($userId);
+        $_SESSION["Adresse"]=getAdress($userId);
+        $_SESSION["NPA"]=getPCode($userId);
         require "view/home.php";
     }else{
         require "view/login.php";

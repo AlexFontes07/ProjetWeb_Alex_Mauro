@@ -25,11 +25,11 @@ $titre="RentASnow - Accueil";
 			<form method="post" name="formRegister" action="index.php?action=loginAction">
 			<div> 	
 				<span>Email</span>
-				<input type="text"> 
+				<input type="Email">
 			</div>
 			<div> 
 				<span >Password</span>
-				<input type="password">
+				<input type="Password">
 			</div>				
 				<input type="submit" value="Login"> 
 			</form>
