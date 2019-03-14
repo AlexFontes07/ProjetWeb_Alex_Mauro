@@ -22,8 +22,7 @@ $titre="RentASnow - Accueil";
 		<h1>Account</h1>
 		<div class="account-pass">
 		<div class="col-md-8 account-top">
-			<form>
-				
+			<form method="post" name="formRegister" action="index.php?action=loginAction">
 			<div> 	
 				<span>Email</span>
 				<input type="text"> 
@@ -36,11 +35,11 @@ $titre="RentASnow - Accueil";
 			</form>
 		</div>
 		<div class="col-md-4 left-account ">
-			<a href="single.html"><img class="img-responsive " src="images/s1.jpg" alt=""></a>
+			<a href="index.php?action=SinglePage"><img class="img-responsive " src="images/s1.jpg" alt=""></a>
 			<div class="five">
 			<h2>25% </h2><span>discount</span>
 			</div>
-			<a href="register.html" class="create">Create an account</a>
+			<a href="index.php?action=SinglePage" class="create">Create an account</a>
 <div class="clearfix"> </div>
 		</div>
 	<div class="clearfix"> </div>

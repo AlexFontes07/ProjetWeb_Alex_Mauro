@@ -35,7 +35,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="header-left">
                 <ul>
-                    <li ><a class="lock"  href="index.php?action=loginPage">Login</a></li>
+                    <?php
+                        if(isset($_SESSION[])){
+                            session_start();
+                        }
+                    ?><li></li>
+                    <li><a class="lock"  href="index.php?action=loginPage">Login</a></li>
                     <li><a class="lock" href="index.php?action=RegisterPage"  >Créer un compte</a></li>
                     <li>
                     </li>

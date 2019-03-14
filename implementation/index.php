@@ -18,8 +18,14 @@ if (isset($_GET['action'])) {
         case "ContactPage":
             openContact();
             break;
-        case "ContactPage":
-            openContact();
+        case "SinglePage":
+            openSingle();
+            break;
+        case "SingleContactPage":
+            openSingle_contact();
+            break;
+        case "LoginAction";
+            login($_POST);
             break;
         default :
             openHome();

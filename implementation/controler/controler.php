@@ -26,5 +26,18 @@ function openHome(){
 function openContact(){
     require "view/contact.php";
 }
+function login($Donnees){
+    require "model/model.php";
+    if(validLogin()){
+
+        require "view/home.php";
+    }else{
+        require "view/login.php";
+    }
+}
+function logout(){
+    session_destroy();
+    require "view/home.php";
+}
 
 ?>
