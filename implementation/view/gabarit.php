@@ -35,14 +35,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="header-left">
                 <ul>
-                    <?php
-                        if(isset($_SESSION["ID"])){
-                            print "<li>Bonjour ".$_SESSION["Prenom"]."</li>";
-                        }else{
-                            print"<li><a class=\"lock\"  href=\"index.php?action=loginPage\">Login</a></li>";
-                            print"<li><a class=\"lock\" href=\"index.php?action=RegisterPage\"  >Créer un compte</a></li>";
-                        }
-                    ?>
+                    <li ><a class="lock"  href="index.php?action=loginPage">Login</a></li>
+                    <li><a class="lock" href="index.php?action=RegisterPage"  >Créer un compte</a></li>
+                    <li>
+                    </li>
+
                 </ul>
 
                 <div class="clearfix"> </div>
@@ -57,24 +54,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class=" h_menu4">
                 <ul class="memenu skyblue">
-                    <li> <!--class="active grid"-->  <a class="color6" href="index.php?action=HomePage">Home</a></li>
-                    <li><a class="color1" href="#">Objets</a>
+                    <li><a class="color1" href="#">Acheter</a>
                         <div class="mepanel">
                             <div class="row">
                                 <div class="col1">
                                     <div class="h_nav">
+                                        <h4>Acheter</h4>
                                         <ul>
-                                            <li><a href="index.php?action=ProductsPage">Accessories</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Bags</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Caps & Hats</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Hoodies & Sweatshirts</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jackets & Coats</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jeans</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jewellery</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jumpers & Cardigans</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Leather Jackets</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Long Sleeve T-Shirts</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Loungewear</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Accesoires</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Arts</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Audio, TV, vidéo</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Bricolage</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Film & DVD</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Montres & Bijoux</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Ordinateurs & Réseaux</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Sport</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Téléphones</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a class="color1" href="#">Louer</a>
+                        <div class="mepanel">
+                            <div class="row">
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Acheter</h4>
+                                        <ul>
+                                            <li><a href="index.php?action=ProductsPage">Levis</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Persol</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Nike</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Edwin</a></li>
+                                            <li><a href="index.php?action=ProductsPage">New Balance</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Jack & Jones</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Paul Smith</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Ray-Ban</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Wood Wood</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -95,82 +112,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Popular Brands</h4>
-                                        <ul>
-                                            <li><a href="index.php?action=ProductsPage">Levis</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Persol</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Nike</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Edwin</a></li>
-                                            <li><a href="index.php?action=ProductsPage">New Balance</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jack & Jones</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Paul Smith</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Ray-Ban</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Wood Wood</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </li>
-                    <li class="grid"><a class="color2" href="#">	Services</a>
+                    <li class="grid"><a class="color1" href="#">Services</a>
                         <div class="mepanel">
                             <div class="row">
                                 <div class="col1">
                                     <div class="h_nav">
+                                        <h4>Bricolage</h4>
                                         <ul>
-                                            <li><a href="index.php?action=ProductsPage">Accessories</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Bags</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Caps & Hats</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Hoodies & Sweatshirts</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jackets & Coats</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jeans</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jewellery</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jumpers & Cardigans</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Leather Jackets</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Long Sleeve T-Shirts</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Loungewear</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Aménagement</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Electricité</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Rénovation</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Plomberie</a></li>
+                                            <br><h4>Jardinage</h4>
+                                            <li><a href="index.php?action=ProductsPage">Tondre la pelouse</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Taille de haie</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Débroussailage</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Autre job</a></li>
+                                    </div>
+                                </div>
+                                <div class="col1">
+                                    <div class="h_nav">
+                                        <h4>Informatique</h4>
+                                        <ul>
+                                            <li><a href="index.php?action=ProductsPage">Nettoyer mon PC</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Cours d'informatique</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Installer une box</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Autre job</a></li>
+                                            <br><h4>Ménage</h4>
+                                            <li><a href="index.php?action=ProductsPage">Repassage</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Lavage auto</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Nettoyage</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Autre job</a></li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col1">
                                     <div class="h_nav">
+                                        <h4>Animaux</h4>
                                         <ul>
-                                            <li><a href="index.php?action=ProductsPage">Shirts</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Shoes, Boots & Trainers</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Shorts</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Suits & Blazers</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Sunglasses</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Sweatpants</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Swimwear</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Trousers & Chinos</a></li>
-                                            <li><a href="index.php?action=ProductsPage">T-Shirts</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Underwear & Socks</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Vests</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <h4>Popular Brands</h4>
-                                        <ul>
-                                            <li><a href="index.php?action=ProductsPage">Levis</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Persol</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Nike</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Edwin</a></li>
-                                            <li><a href="index.php?action=ProductsPage">New Balance</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jack & Jones</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Paul Smith</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Ray-Ban</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Wood Wood</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Garde de chien</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Garde de chat</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Promener son chien</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Autre animaux</a></li>
+                                            <br><h4>Déménagement</h4>
+                                            <li><a href="index.php?action=ProductsPage">Aide au déménagement</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Déplacer des meubles</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Autre job</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li><a class="color4" href="index.php?action=ContactPage">Nous Contacter</a></li>
+                    <li><a class="color1" href="index.php?action=ContactPage">Nous Contacter</a></li>
                 </ul>
             </div>
 

@@ -1,7 +1,5 @@
 <?php
-if(!isset($_SESSION)){
-    session_start();
-}
+session_start();
 require 'controler/controler.php';
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
@@ -12,8 +10,23 @@ if (isset($_GET['action'])) {
         case "RegisterPage":
             openRegister();
             break;
-        case "ProductsPage":
-            openProducts();
+        case "listServices":
+            if(!isset($_GET["page"])){
+                $_GET["page"]=1;
+            }
+            openProducts(3,$_GET['page']);
+            break;
+        case "listItemsA":
+            if(!isset($_GET["page"])){
+                $_GET["page"]=1;
+            }
+            openProducts(1,$_GET['page']);
+            break;
+        case "listItemsL":
+            if(!isset($_GET["page"])){
+                $_GET["page"]=1;
+            }
+            openProducts(2,$_GET['page']);
             break;
         case "ContactPage":
             openContact();

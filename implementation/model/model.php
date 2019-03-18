@@ -5,7 +5,6 @@
  * Date: 14.03.2019
  * Time: 11:23
  */
-
 function getUserDataBase(){
     $contents=file_get_contents("data/utilisateursDB.json");
     $tempArray = json_decode($contents,true);
@@ -19,7 +18,7 @@ function getItemDataBase(){
 function getUserId($email,$password){
     $tempId=-1;
     $array=getUserDataBase();
-    foreach($array as $user){
+    foreach($array(1) as $user){
         if($user["Email"]==$email){
             if($user["Password"]==$password){
                 $tempId=$user["id_utilisateur"];
@@ -32,7 +31,7 @@ function getUserId($email,$password){
 function getFName($userId){
     $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
+    foreach($array(1) as $user){
         if($user["id_utilisateur"]==$userId){
             $temp= $user["Prenom"];
         }
@@ -42,7 +41,7 @@ function getFName($userId){
 function getLName($userId){
     $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
+    foreach($array(1) as $user){
         if($user["id_utilisateur"]==$userId){
             $temp= $user["nom"];
         }
@@ -52,7 +51,7 @@ function getLName($userId){
 function getEmail($userId){
     $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
+    foreach($array(1) as $user){
         if($user["id_utilisateur"]==$userId){
             $temp= $user["Email"];
 
@@ -63,7 +62,7 @@ function getEmail($userId){
 function getAdress($userId){
     $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
+    foreach($array(1) as $user){
         if($user["id_utilisateur"]==$userId){
             $temp= $user["Adresse"];
 
@@ -74,7 +73,7 @@ function getAdress($userId){
 function getPCode($userId){
     $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
+    foreach($array(1) as $user){
         if($user["id_utilisateur"]==$userId){
             $temp= $user["NPA"];
         }
