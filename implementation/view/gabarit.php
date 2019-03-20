@@ -83,15 +83,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <div class="h_nav">
                                         <h4>Louer</h4>
                                         <ul>
+                                            <li><a href="index.php?action=ProductsPage">Immobilier</a></li>
                                             <li><a href="index.php?action=ProductsPage">Accesoires</a></li>
                                             <li><a href="index.php?action=ProductsPage">Arts</a></li>
                                             <li><a href="index.php?action=ProductsPage">Audio, TV, vidéo</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Bricolage</a></li>
                                             <li><a href="index.php?action=ProductsPage">Film & DVD</a></li>
                                             <li><a href="index.php?action=ProductsPage">Montres & Bijoux</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Ordinateurs & Réseaux</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Réseaux</a></li>
                                             <li><a href="index.php?action=ProductsPage">Sport</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Téléphones</a></li>
                                         </ul>
                                     </div>
                                 </div>
