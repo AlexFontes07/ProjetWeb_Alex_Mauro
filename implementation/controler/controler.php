@@ -7,12 +7,15 @@
  */
 
 require "model/model.php";
-function openSingle_contact(){
-require "view/single_contact.php";
+function openSingle_contact($id){
+    $array=getItemDataBase();
+    $email=getEmail($array[$id]["id_utilisateur"]);
+    $id-=1;
+    require "view/single_contact.php";
 }
 function openSingle($id){
     $array=getItemDataBase();
-
+    $id-=1;
     require "view/single.php";
 }
 function openRegister(){
@@ -30,12 +33,11 @@ function openProducts($type,$page){
             if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter >= ($page - 1) * 9) {
                 $itemList = $itemList . '<div class="col-md-4 bottom-cd simpleCart_shelfItem">
                                             <div class="product-at">
-                                                <a href="index.php?action=SinglePage">
+                                                <a href="index.php?action=SinglePage&id='. $item["id_annonce"] .'">
                                                     <img class="img-responsive" src="images/annonces/' . $item["id_annonce"] . '.jpg">
-                                                    <div class="pro-grid"><span class="buy-in"></span></div>
                                                  </a>
                                              </div><p class="tun">' . $item["Titre"] . '</p>
-                                             <a href="#" class="item_add"><p class="number item_price"><i> </i>' . $item["Prix"] . ' CHF</p></a>
+                                             <a href="index.php?action=SinglePage&id='. $item["id_annonce"] .'" class="item_add"><p class="number item_price"><i> </i>' . $item["Prix"] . ' CHF</p></a>
                                           </div>';
                 $collCounter++;
 

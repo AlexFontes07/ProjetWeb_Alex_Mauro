@@ -32,10 +32,10 @@ if (isset($_GET['action'])) {
             openContact();
             break;
         case "SinglePage":
-            openSingle();
+            openSingle($_GET["id"]);
             break;
         case "SingleContactPage":
-            openSingle_contact();
+            openSingle_contact($_GET["id"]);
             break;
         case "LoginAction";
             login($_POST);

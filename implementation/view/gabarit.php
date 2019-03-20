@@ -54,12 +54,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class=" h_menu4">
                 <ul class="memenu skyblue">
-                    <li><a class="color1" href="#">Acheter</a>
+                    <li><a class="color1" href="index.php?action=listItemsA">Acheter</a>
+                        <!--
                         <div class="mepanel">
                             <div class="row">
                                 <div class="col1">
                                     <div class="h_nav">
-                                        <h4>Acheter</h4>
+                                        <h4>Acheter</a></h4>
+
+
                                         <ul>
                                             <li><a href="index.php?action=ProductsPage">Accesoires</a></li>
                                             <li><a href="index.php?action=ProductsPage">Arts</a></li>
@@ -71,17 +74,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <li><a href="index.php?action=ProductsPage">Sport</a></li>
                                             <li><a href="index.php?action=ProductsPage">Téléphones</a></li>
                                         </ul>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
+                         -->
                     </li>
-                    <li><a class="color1" href="#">Louer</a>
+                    <li><a class="color1" href="index.php?action=listItemsL">Louer</a>
+                        <!--
                         <div class="mepanel">
                             <div class="row">
                                 <div class="col1">
                                     <div class="h_nav">
                                         <h4>Louer</h4>
+
                                         <ul>
                                             <li><a href="index.php?action=ProductsPage">Immobilier</a></li>
                                             <li><a href="index.php?action=ProductsPage">Accesoires</a></li>
@@ -92,12 +99,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <li><a href="index.php?action=ProductsPage">Réseaux</a></li>
                                             <li><a href="index.php?action=ProductsPage">Sport</a></li>
                                         </ul>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        -->
                     </li>
-                    <li class="grid"><a class="color1" href="#">Services</a>
+                    <li class="grid"><a class="color1" href="index.php?action=listServices">Services</a>
+                        <!--
                         <div class="mepanel">
                             <div class="row">
                                 <div class="col1">
@@ -148,7 +158,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </div>
                             </div>
                         </div>
+                    -->
                     </li>
+
                     <li><a class="color1" href="index.php?action=ContactPage">Nous Contacter</a></li>
                 </ul>
             </div>

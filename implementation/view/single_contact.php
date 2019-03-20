@@ -20,23 +20,23 @@ $titre="RentASnow - Accueil";
 
 <div class="container">
     <div class="account">
-        <h1>Account</h1>
+        <h1><?php echo $array[$id]["Titre"];?></h1>
         <div class="account-pass">
             <div class="col-md-8 account-top">
                 <form>
-                    <input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
+                    <input type="text" value="Nom" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Nom';}">
 
-                    <input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+                    <input type="text" value="<?php echo $email;?>" onblur="if (this.value == '') {this.value ='<?php echo $email;?>';}" >
 
                     <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
                     <input type="submit" value="Login">
                 </form>
             </div>
             <div class="col-md-4 left-account ">
-                <a href="single.html"><img class="img-responsive " src="images/s1.jpg" alt=""></a>
-                <div class="five">
-                    <h2>25% </h2><span>discount</span>
-                </div>
+                <a href="index.php?action=SinglePage&id=<?php echo $id+1 ?>"><img class="img-responsive " src="images/annonces/<?php echo $array[$id]["id_annonce"]?>.jpg" alt=""></a>
+                <br>
+                <h5 class="item_price"><?php echo $array[$id]["Prix"];?> CHF</h5>
+                <p><?php echo $array[$id]["Description"];?></p>
             </div>
             <div class="clearfix"> </div>
         </div>

@@ -16,7 +16,6 @@ ob_start();
 $titre="Objet";
 ?>
 
-
 <!--content-->
 <!---->
 <div class="product">
@@ -156,7 +155,7 @@ $titre="Objet";
 
             </div>
             <div class=" per1">
-                <a href="#" ><img class="img-responsive" src="images/pro.jpg" alt="">
+                <a href="#" ><img class="img-responsive" src="images/<?php echo $array[$id]["Titre"];?>.jpg" alt="">
                     <div class="six1">
                         <h4>DISCOUNT</h4>
                         <p>Up to</p>
@@ -168,8 +167,8 @@ $titre="Objet";
             <div class="col-md-5 single-top">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li data-thumb="images/si.jpg">
-                            <img src="images/si.jpg" />
+                        <li data-thumb="images/annonces/<?php echo $array[$id]["id_annonce"];?>.jpg">
+                            <img src="images/annonces/<?php echo $array[$id]["id_annonce"];?>.jpg" />
                         </li>
                     </ul>
                 </div>
@@ -185,125 +184,33 @@ $titre="Objet";
                             controlNav: "thumbnails"
                         });
                     });
+                    // Can also be used with $(document).ready()
+                    $(window).load(function() {
+                        $('.flexslider').flexslider({
+                            animation: "slide",
+                            controlNav: "thumbnails"
+                        });
+                    });
                 </script>
             </div>
             <div class="col-md-7 single-top-in simpleCart_shelfItem">
                 <div class="single-para ">
-                    <h4>Lorem Ipsum</h4>
-                    <div class="star-on">
-                        <ul class="star-footer">
-                            <li><a href="#"><i> </i></a></li>
-                            <li><a href="#"><i> </i></a></li>
-                            <li><a href="#"><i> </i></a></li>
-                            <li><a href="#"><i> </i></a></li>
-                            <li><a href="#"><i> </i></a></li>
-                        </ul>
-                        <div class="review">
-                            <a href="#"> 1 customer review </a>
-
-                        </div>
+                        <h4><?php echo $array[$id]["Titre"];?></h4>
+                        <div class="star-on">
                         <div class="clearfix"> </div>
-                    </div>
-
-                    <h5 class="item_price">$ 95.00</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                        diam nonummy nibh euismod tincidunt ut laoreet dolore
-                        magna aliquam erat </p>
-                    <div class="available">
-                        <ul>
-                            <li>Color
-                                <select>
-                                    <option>Silver</option>
-                                    <option>Black</option>
-                                    <option>Dark Black</option>
-                                    <option>Red</option>
-                                </select></li>
-                            <li class="size-in">Size<select>
-                                    <option>Large</option>
-                                    <option>Medium</option>
-                                    <option>small</option>
-                                    <option>Large</option>
-                                    <option>small</option>
-                                </select></li>
-                            <div class="clearfix"> </div>
-                        </ul>
-                    </div>
+                        </div>
+                        <h5 class="item_price"><?php echo $array[$id]["Prix"];?> CHF</h5>
+                    <p><?php echo $array[$id]["Description"];?></p>
                     <ul class="tag-men">
-                        <li><span>TAG</span>
-                            <span class="women1">: Women,</span></li>
-                        <li><span>SKU</span>
-                            <span class="women1">: CK09</span></li>
+                        <li><span>ID</span>
+                            <span class="women1"><?php echo $array[$id]["id_annonce"];?></span></li>
                     </ul>
-                    <a href="#" class="add-cart item_add">ADD TO CART</a>
+                    <a href="index.php?action=SingleContactPage&id=<?php echo $array[$id]["id_annonce"];?>" class="add-cart item_add">Contacter</a>
 
                 </div>
             </div>
             <div class="clearfix"> </div>
             <!---->
-            <div class="cd-tabs">
-                <nav>
-                    <ul class="cd-tabs-navigation">
-                        <li><a data-content="fashion"  href="#0">Description </a></li>
-                        <li><a data-content="cinema" href="#0" >Addtional Informatioan</a></li>
-                        <li><a data-content="television" href="#0" class="selected ">Reviews (1)</a></li>
-
-                    </ul>
-                </nav>
-                <ul class="cd-tabs-content">
-                    <li data-content="fashion" >
-                        <div class="facts">
-                            <p > There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined </p>
-                            <ul>
-                                <li>Research</li>
-                                <li>Design and Development</li>
-                                <li>Porting and Optimization</li>
-                                <li>System integration</li>
-                                <li>Verification, Validation and Testing</li>
-                                <li>Maintenance and Support</li>
-                            </ul>
-                        </div>
-
-                    </li>
-                    <li data-content="cinema" >
-                        <div class="facts1">
-
-                            <div class="color"><p>Color</p>
-                                <span >Blue, Black, Red</span>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="color">
-                                <p>Size</p>
-                                <span >S, M, L, XL</span>
-                                <div class="clearfix"></div>
-                            </div>
-
-                        </div>
-
-                    </li>
-                    <li data-content="television" class="selected">
-                        <div class="comments-top-top">
-                            <div class="top-comment-left">
-                                <img class="img-responsive" src="images/co.png" alt="">
-                            </div>
-                            <div class="top-comment-right">
-                                <h6><a href="#">Hendri</a> - September 3, 2014</h6>
-                                <ul class="star-footer">
-                                    <li><a href="#"><i> </i></a></li>
-                                    <li><a href="#"><i> </i></a></li>
-                                    <li><a href="#"><i> </i></a></li>
-                                    <li><a href="#"><i> </i></a></li>
-                                    <li><a href="#"><i> </i></a></li>
-                                </ul>
-                                <p>Wow nice!</p>
-                            </div>
-                            <div class="clearfix"> </div>
-                            <a class="add-re" href="#">ADD REVIEW</a>
-                        </div>
-
-                    </li>
-                    <div class="clearfix"></div>
-                </ul>
-            </div>
         </div>
 
     </div>
