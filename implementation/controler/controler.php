@@ -10,26 +10,44 @@ require "model/model.php";
 function openSingle_contact(){
 require "view/single_contact.php";
 }
-function openSingle(){
+function openSingle($id){
+    $array=getItemDataBase();
+
     require "view/single.php";
 }
 function openRegister(){
+
     require "view/register.php";
 }
 function openProducts($type,$page){
+    $collCounter=0;
     $itemCounter=0;
-    $itemList='<div class=\" bottom-product\">';
+    $itemList='<div class="bottom-product">';
     $array=getItemDataBase();
     foreach($array as $item){
-        if($item["Type"]==$type){
-            $itemList=$itemList.'<div class=\"product-at \"><a href="index.php?action=SinglePage"><img class="img-responsive" src="images/'.$item["id_annonce"].'.jpg"><div class="pro-grid"><span class="buy-in"></span></div></a></div><p class="tun">'.$item["Titre"].'</p><a href="#" class="item_add"><p class="number item_price"><i> </i>'.$item["Prix"].' CHF</p></a>';
+        if($item["Type"]==$type) {
             $itemCounter++;
-            if($itemCounter==2){
-                $itemList=$itemList.'<div class="clearfix"></div></div><div class=" bottom-product">';
-                $itemCounter=0;
+            if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter >= ($page - 1) * 9) {
+                $itemList = $itemList . '<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+                                            <div class="product-at">
+                                                <a href="index.php?action=SinglePage">
+                                                    <img class="img-responsive" src="images/annonces/' . $item["id_annonce"] . '.jpg">
+                                                    <div class="pro-grid"><span class="buy-in"></span></div>
+                                                 </a>
+                                             </div><p class="tun">' . $item["Titre"] . '</p>
+                                             <a href="#" class="item_add"><p class="number item_price"><i> </i>' . $item["Prix"] . ' CHF</p></a>
+                                          </div>';
+                $collCounter++;
+
+                if ($collCounter == 3) {
+                    $itemList = $itemList . '<div class="clearfix"></div>';
+                    if ($itemCounter != 9) {
+                        $itemList = $itemList . '</div><div class=" bottom-product">';
+                    }
+                    $collCounter = 0;
+                }
             }
         }
-        $itemList=$itemList.'</div>';
     }
 
     require "view/products.php";

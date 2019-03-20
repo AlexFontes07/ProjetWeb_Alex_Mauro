@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>New Store A Ecommerce Category Flat Bootstarp Resposive Website Template | Login :: w3layouts</title>
+    <title>BuyHard</title>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
@@ -81,34 +81,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="row">
                                 <div class="col1">
                                     <div class="h_nav">
-                                        <h4>Acheter</h4>
+                                        <h4>Louer</h4>
                                         <ul>
-                                            <li><a href="index.php?action=ProductsPage">Levis</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Persol</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Nike</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Edwin</a></li>
-                                            <li><a href="index.php?action=ProductsPage">New Balance</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Jack & Jones</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Paul Smith</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Ray-Ban</a></li>
-                                            <li><a href="index.php?action=ProductsPage">Wood Wood</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col1">
-                                    <div class="h_nav">
-                                        <ul>
-                                            <li><a href="index.php?action=ProductsPage">Shirts</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">Shoes, Boots & Trainers</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">Shorts</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">Suits & Blazers</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">Sunglasses</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">Sweatpants</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">Swimwear</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">Trousers & Chinos</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">T-Shirts</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">Underwear & Socks</a></li>
-                                            <li><a href="index.php?action=ProductsPage""index.php?action=ProductsPage">Vests</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Accesoires</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Arts</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Audio, TV, vidéo</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Bricolage</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Film & DVD</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Montres & Bijoux</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Ordinateurs & Réseaux</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Sport</a></li>
+                                            <li><a href="index.php?action=ProductsPage">Téléphones</a></li>
                                         </ul>
                                     </div>
                                 </div>
