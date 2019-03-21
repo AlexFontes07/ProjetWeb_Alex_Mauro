@@ -57,7 +57,7 @@
   },
   {
     "id_annonce": 8,
-    "Titre": "Vélo",
+    "Titre": "Vélo de cycliste",
     "Description": "Sed malesuada augue ut lacus. Nulla tincidunt, neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget",
     "Prix": 40,
     "Type": 2,
@@ -81,7 +81,7 @@
   },
   {
     "id_annonce": 11,
-    "Titre": "Voiture de location",
+    "Titre": "Voiture de location Fiat",
     "Description": "leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit amet, consectetuer adipiscing",
     "Prix": 79,
     "Type": 2,
@@ -121,7 +121,7 @@
   },
   {
     "id_annonce": 16,
-    "Titre": "Bijoux en or",
+    "Titre": "Bague en or",
     "Description": "mauris, rhoncus id, mollis nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo elementum sem, vitae aliquam",
     "Prix": 265,
     "Type": 1,
@@ -177,7 +177,7 @@
   },
   {
     "id_annonce": 23,
-    "Titre": "Location camionette",
+    "Titre": "Location camionnette",
     "Description": "fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada vel, convallis in, cursus et, eros.",
     "Prix": 120,
     "Type": 2,

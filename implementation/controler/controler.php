@@ -23,14 +23,26 @@ function openRegister(){
     require "view/register.php";
 }
 function openProducts($type,$page){
+    $typeText="";
     $collCounter=0;
     $itemCounter=0;
     $itemList='<div class="bottom-product">';
     $array=getItemDataBase();
+    switch($type){
+        case 1:
+            $typeText="listItemsA";
+            break;
+        case 2:
+            $typeText="listItemsL";
+            break;
+        case 3:
+            $typeText="listServices";
+            break;
+    }
     foreach($array as $item){
         if($item["Type"]==$type) {
             $itemCounter++;
-            if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter >= ($page - 1) * 9) {
+            if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter > ($page - 1) * 9) {
                 $itemList = $itemList . '<div class="col-md-4 bottom-cd simpleCart_shelfItem">
                                             <div class="product-at">
                                                 <a href="index.php?action=SinglePage&id='. $item["id_annonce"] .'">

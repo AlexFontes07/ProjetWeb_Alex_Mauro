@@ -26,10 +26,10 @@ $titre="RentASnow - Accueil";
                 <form>
                     <input type="text" value="Nom" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Nom';}">
 
-                    <input type="text" value="<?php echo $email;?>" onblur="if (this.value == '') {this.value ='<?php echo $email;?>';}" >
+                    <input type="text" value="<?php echo $email;?>" onblur="if (this.value == '') {this.value ='<?php echo $email;?>';}"  disabled>
 
                     <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Envoyer">
                 </form>
             </div>
             <div class="col-md-4 left-account ">
