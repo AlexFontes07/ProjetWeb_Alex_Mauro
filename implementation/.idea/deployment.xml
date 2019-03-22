@@ -2,6 +2,16 @@
 <project version="4">
   <component name="PublishConfigData" serverName="Serveur">
     <serverData>
+      <paths name="BuyHard">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/.ftpquota" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
       <paths name="Serveur">
         <serverdata>
           <mappings>

@@ -5,6 +5,14 @@
       <webServer id="4ac68dc1-c919-413b-810f-6f0ff037b5e6" name="Serveur" url="http://localhost:8081">
         <fileTransfer port="0" accessType="LOCAL" />
       </webServer>
+      <webServer id="0aeb8a6a-41c8-4ff7-8834-222eb8dbe92c" name="BuyHard" url="http://buyhard.mycpnv.ch">
+        <fileTransfer host="buyhard.mycpnv.ch" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
