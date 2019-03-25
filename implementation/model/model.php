@@ -29,55 +29,28 @@ function getUserId($email,$password){
 }
 
 function getFName($userId){
-    $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
-        if($user["id_utilisateur"]==$userId){
-            $temp= $user["Prenom"];
-        }
-    }
+    $temp= $array[$userId-1]["Prenom"];
     return $temp;
 }
 function getLName($userId){
-    $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
-        if($user["id_utilisateur"]==$userId){
-            $temp= $user["nom"];
-        }
-    }
+    $temp= $array[$userId-1]["nom"];
     return $temp;
 }
 function getEmail($userId){
-    $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
-        if($user["id_utilisateur"]==$userId){
-            $temp= $user["Email"];
-
-        }
-    }
+    $temp= $array[$userId-1]["Email"];
     return $temp;
 }
 function getAdress($userId){
-    $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
-        if($user["id_utilisateur"]==$userId){
-            $temp= $user["Adresse"];
-
-        }
-    }
+    $temp= $array[$userId-1]["Adresse"];
     return $temp;
 }
 function getPCode($userId){
-    $temp="";
     $array=getUserDataBase();
-    foreach($array as $user){
-        if($user["id_utilisateur"]==$userId){
-            $temp= $user["NPA"];
-        }
-    }
+    $temp= $array[$userId-1]["NPA"];
     return $temp;
 }
 ?>

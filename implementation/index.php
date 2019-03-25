@@ -40,6 +40,15 @@ if (isset($_GET['action'])) {
         case "LoginAction";
             login($_POST);
             break;
+        case "RegisterAction";
+            register($_POST);
+            break;
+        case "Logout";
+            logout();
+            break;
+        case "new_annonce";
+            require "view/new_annonce.php";
+            break;
         default :
             openHome();
             break;

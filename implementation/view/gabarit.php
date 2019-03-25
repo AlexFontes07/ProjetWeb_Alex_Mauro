@@ -35,8 +35,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="header-left">
                 <ul>
-                    <li ><a class="lock"  href="index.php?action=loginPage">Login</a></li>
-                    <li><a class="lock" href="index.php?action=RegisterPage"  >Créer un compte</a></li>
+                    <?php if(!isset($_SESSION["Email"])){
+                        echo"<li ><a class=\"lock\"  href=\"index.php?action=loginPage\">Login</a></li>
+                    <li><a class=\"lock\" href=\"index.php?action=RegisterPage\"  >Créer un compte</a></li>";
+                    }else{
+                        echo"<li ><a class=\"lock\"  href=\"index.php?action=Logout\">Logout</a></li>";
+                    }
+                    ?>
                     <li>
                     </li>
 
@@ -160,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                     -->
                     </li>
-
+                    <li><a class="color1" href="index.php?action=new_annonce">Nouvelle annonce</a></li>
                     <li><a class="color1" href="index.php?action=ContactPage">Nous Contacter</a></li>
                 </ul>
             </div>

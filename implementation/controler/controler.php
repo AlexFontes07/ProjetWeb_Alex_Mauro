@@ -77,6 +77,7 @@ function openContact(){
     require "view/contact.php";
 }
 function login($Donnees){
+    $userId=-1;
     $userId=getUserId($Donnees["Email"],$Donnees["Password"]);
     if($userId!=-1){
         $_SESSION["id_utilisateur"]=$userId;
@@ -91,7 +92,7 @@ function login($Donnees){
     }
 }
 function logout(){
-    session_destroy();
+    session_unset();
     require "view/home.php";
 }
 

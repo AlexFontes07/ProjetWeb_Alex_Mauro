@@ -13,20 +13,20 @@ $titre="RentASnow - Accueil";
 <div class=" container">
 <div class=" register">
 	<h1>Inscription</h1>
-		  	  <form> 
+		  	  <form method="Post" name="formRegister" action="index.php?action=LoginAction">
 				 <div class="col-md-6 register-top-grid">
 					<h3>Information personnelle</h3>
 					 <div>
 						<span>Prénom</span>
-						<input type="text"> 
+						<input name="Prenom" type="text">
 					 </div>
 					 <div>
 						<span>Nom</span>
-						<input type="text"> 
+						<input name="Nom" type="text">
 					 </div>
 					 <div>
 						 <span>E-mail</span>
-						 <input type="text">
+						 <input name="Email" type="text">
 					 </div>
                      <br>
                  </div>
@@ -34,11 +34,11 @@ $titre="RentASnow - Accueil";
                         <h3>Information de login</h3>
                          <div>
                             <span>Mot de passe</span>
-                            <input type="password">
+                            <input name="password1" type="password">
                          </div>
                          <div>
                             <span>Confirmation du mot de passe</span>
-                            <input type="password">
+                            <input name="password2" type="password">
                          </div>
                          <input type="submit" value="Envoyer">
 							
