@@ -46,6 +46,7 @@ $titre="RentASnow - Accueil";
                             <span>Confirmation du mot de passe</span>
                             <input name="password2" type="password">
                          </div>
+                      <div class="clearfix"> </div>
                          <input type="submit" value="Envoyer">
 							
                   </div>

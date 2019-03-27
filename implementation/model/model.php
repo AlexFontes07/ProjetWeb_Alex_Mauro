@@ -64,6 +64,20 @@ function checkEmailTaken($email){
     return $res;
 }
 function addUser($data){
+    $array=getUserDataBase();
+    $userID=count($array);
+    $array[$userID]["id_utilisateur"]=$userID+1;
+    $array[$userID]["nom"]=$data["Nom"];
+    $array[$userID]["Prenom"]=$data["Prenom"];
+    $array[$userID]["Email"]=$data["Email"];
+    $array[$userID]["Password"]=$data["password1"];
+    $array[$userID]["Adresse"]=$data["Adresse"];
+    $array[$userID]["NPA"]=$data["NPA"];
+    updateJson($array);
 
+}
+function updateJson($array){
+    $myJSON = json_encode($array);
+    file_put_contents('data/utilisateursDB.json',$myJSON);
 }
 ?>

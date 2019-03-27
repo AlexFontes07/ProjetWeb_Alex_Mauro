@@ -39,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         echo"<li ><a class=\"lock\"  href=\"index.php?action=loginPage\">Login</a></li>
                         <li><a class=\"lock\" href=\"index.php?action=RegisterPage\"  >Créer un compte</a></li>";
                     }else{
-                        echo'<li><a class="color1" href="index.php?action=new_annonce">Nouvelle annonce</a></li>';
+                        echo'<li><a class="color1" href="index.php?action=annonces">Mes Annonces</a></li>';
                         echo"<li><a class=\"lock\"  href=\"index.php?action=Logout\">Logout</a></li>";
                     }
                     ?>
