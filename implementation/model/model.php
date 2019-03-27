@@ -53,4 +53,17 @@ function getPCode($userId){
     $temp= $array[$userId-1]["NPA"];
     return $temp;
 }
+function checkEmailTaken($email){
+    $res=true;
+    $array=getUserDataBase();
+    foreach($array as $user){
+        if($user["Email"]==$email){
+            $res=false;
+        }
+    }
+    return $res;
+}
+function addUser($data){
+
+}
 ?>

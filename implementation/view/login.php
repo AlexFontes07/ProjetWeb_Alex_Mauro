@@ -22,7 +22,7 @@ $titre="RentASnow - Accueil";
         <h1>Account</h1>
         <div class="account-pass">
             <div class="col-md-8 account-top">
-                <form id="Login" method="Post" name="formRegister" action="index.php?action=LoginAction">
+                <form action="index.php?action=LoginAction" id="Login" method="Post" name="formRegister">
 
                     <div>
                         <span>Email</span>
@@ -33,9 +33,8 @@ $titre="RentASnow - Accueil";
                         <input name="Password" type="password">
                     </div>
                     <div class="clearfix"> </div>
-                    <a href="" onclick="document.getElementById('Login').submit();" class="create">Login</a>
-                    <div class="clearfix"> </div>
-                    <a href="index.php?action=SinglePage" class="create">Create an account</a>
+                    <input type="submit" value="Login">
+                    <a href="index.php?action=RegisterPage"><input type="button" value="S'inscrire"></a>
                 </form>
             </div>
             <div class="col-md-4 left-account ">

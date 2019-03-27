@@ -103,6 +103,28 @@ a.item_add {
 	font-weight: 700;
 	background-color: #FFFFFF;
 }
+.search input[type="button"] {
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	outline: none;
+	top: 0px;
+	right: 0px;
+	background: #c7c7c7;
+	font-size: 1.2em;
+	color: #000;
+	padding: 3px;
+	font-weight: 700;
+}
+.search input[type="button"]:hover {
+	background: #EF5F21;
+	color: #fff;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
 .search input[type="submit"] {
 	border: none;
 	cursor: pointer;
@@ -653,6 +675,20 @@ ul.social li i:hover{
 }
 .contact-grid textarea{
 	resize:none;
+}
+.send input[type="button"]{
+	width: 14%;
+	font-size: 1.1em;
+	background:#EF5F21;
+	padding: 0.4em 0.8em;
+	text-align: center;
+	color: #fff;
+	border: none;
+	outline:none;
+	-webkit-appearance: none;
+}
+.send input[type="button"]:hover{
+	background:#2d2d2d;
 }
 .send input[type="submit"]{
 	width: 14%;
@@ -1457,6 +1493,25 @@ a.add-re:hover{
 .account-top textarea{
 	resize:none;
 	height:60px;		
+}
+.account-top input[type="button"]{
+	outline:none;
+	padding:7px 20px;
+	color:#FFF;
+	cursor:pointer;
+	background:#EF5F21;
+	border:none;
+	width:20%;
+	margin:1em auto 0;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	font-size: 1.2em;
+}
+.account-top input[type="button"]:hover{
+	background:#000;
 }
 .account-top input[type="submit"]{
 	outline:none;

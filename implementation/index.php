@@ -46,6 +46,9 @@ if (isset($_GET['action'])) {
         case "Logout";
             logout();
             break;
+        case "annonces":
+            require "view/annonces.php";
+            break;
         case "new_annonce";
             require "view/new_annonce.php";
             break;

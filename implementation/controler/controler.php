@@ -91,6 +91,20 @@ function login($Donnees){
         require "view/login.php";
     }
 }
+function Register($Donnees){
+    if(checkEmailTaken($Donnees["Email"])==true){
+        addUser($Donnees);
+        $_SESSION["id_utilisateur"]=$Donnees["Email"];
+        $_SESSION["Prenom"]=getFName($Donnees["Prenom"]);
+        $_SESSION["Nom"]=getLName($Donnees["Nom"]);
+        $_SESSION["Email"]=getEmail($Donnees["Email"]);
+        $_SESSION["Adresse"]=getAdress($Donnees["Adresse"]);
+        $_SESSION["NPA"]=getPCode($Donnees["NPA"]);
+        require "view/home.php";
+    }else{
+        require "view/login.php";
+    }
+}
 function logout(){
     session_unset();
     require "view/home.php";
