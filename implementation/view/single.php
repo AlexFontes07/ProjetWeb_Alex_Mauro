@@ -118,8 +118,8 @@ $titre="Objet";
             <div class="col-md-5 single-top">
                 <div class="flexslider">
                     <ul class="slides">
-                        <li data-thumb="images/annonces/<?php echo $array[$id]["id_annonce"];?>.jpg">
-                            <img src="images/annonces/<?php echo $array[$id]["id_annonce"];?>.jpg" />
+                        <li data-thumb="images/annonces/<?php if($array[$id]["Type"]!=3){echo $array[$id]["id_annonce"];}else{echo $array[$id]["Titre"];};?>.jpg">
+                            <img src="images/annonces/<?php if($array[$id]["Type"]!=3){echo $array[$id]["id_annonce"];}else{echo $array[$id]["Titre"];};?>.jpg" />
                         </li>
                     </ul>
                 </div>

@@ -33,7 +33,7 @@ $titre="RentASnow - Accueil";
                 </form>
             </div>
             <div class="col-md-4 left-account ">
-                <a href="index.php?action=SinglePage&id=<?php echo $id+1 ?>"><img class="img-responsive " src="images/annonces/<?php echo $array[$id]["id_annonce"]?>.jpg" alt=""></a>
+                <a href="index.php?action=SinglePage&id=<?php echo $id+1 ?>"><img class="img-responsive " src="images/annonces/<?php if($array[$id]["Type"]!=3){echo $array[$id]["id_annonce"];}else{echo $array[$id]["Titre"];};?>.jpg" alt=""></a>
                 <br>
                 <h5 class="item_price"><?php echo $array[$id]["Prix"];?> CHF</h5>
                 <p><?php echo $array[$id]["Description"];?></p>

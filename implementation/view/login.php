@@ -26,11 +26,11 @@ $titre="RentASnow - Accueil";
 
                     <div>
                         <span>Email</span>
-                        <input name="Email" type="text">
+                        <input name="Email" type="email" required>
                     </div>
                     <div>
                         <span >Password</span>
-                        <input name="Password" type="password">
+                        <input name="Password" type="password" required>
                     </div>
                     <div class="clearfix"> </div>
                     <input type="submit" value="Login">

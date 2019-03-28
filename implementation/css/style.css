@@ -1375,7 +1375,7 @@ a.add-re:hover{
   display: block;
   color: #A09F9F;
 }
-.register-top-grid input[type="text"], .register-bottom-grid input[type="password"],.register-bottom-grid input[type="text"]  {
+.register-top-grid input[type="text"], .register-bottom-grid input[type="password"],.register-bottom-grid input[type="text"],.register-bottom-grid input[type="email"]  {
 	width: 100%;
 	padding: 1em;
 	margin: 1em 0;
@@ -1479,7 +1479,7 @@ a.add-re:hover{
 .account-top div{
 	padding:0.5em 0;
 }
-.account-top input[type="text"],
+.account-top input[type="text"],.account-top input[type="email"],
 .account-top textarea,.account-top input[type="password"]{
 	padding:1em;
 	width:100%;
@@ -1580,7 +1580,7 @@ a.create {
 .single-bottom {
   padding: 0em 0 4em;
 }
-.single-bottom input[type="text"], .single-bottom textarea {
+.single-bottom input[type="text"],.single-bottom input[type="email"], .single-bottom textarea {
   width: 100%;
   padding: 1em;
   background: none;
@@ -2345,7 +2345,7 @@ a.item_add p.number {
 .single-bottom h3 {
   font-size: 1.5em;
 }
-.single-bottom input[type="text"], .single-bottom textarea {
+.single-bottom input[type="text"],.single-bottom input[type="email"], .single-bottom textarea {
   padding: 0.6em;
 }
 .single-bottom textarea {
@@ -2360,14 +2360,14 @@ a.item_add p.number {
 .contact-grid ,.contact-in{
   padding: 0;
 }
-.contact-grid input[type="text"], .contact-grid textarea {
+.contact-grid input[type="text"],.contact-grid input[type="Email"], .contact-grid textarea {
   padding: 0.8em;
 }
 .send input[type="submit"] {
   width: 24%;
 }
-.account-top input[type="text"], .account-top textarea, .account-top input[type="password"]
-,.register-top-grid input[type="text"], .register-bottom-grid input[type="password"] {
+.account-top input[type="text"],.account-top input[type="email"], .account-top textarea, .account-top input[type="password"]
+,.register-top-grid input[type="text"].register-top-grid input[type="text"], .register-bottom-grid input[type="password"] {
   padding: 0.5em;
 }
 .account-top input[type="submit"] {

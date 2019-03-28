@@ -23,7 +23,7 @@ function openRegister(){
     require "view/register.php";
 }
 function openProducts($type,$page){
-    $typeText="";
+    $ShowingServices = array();
     $collCounter=0;
     $itemCounter=0;
     $itemList='<div class="bottom-product">';
@@ -41,24 +41,51 @@ function openProducts($type,$page){
     }
     foreach($array as $item){
         if($item["Type"]==$type) {
-            $itemCounter++;
-            if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter > ($page - 1) * 9) {
-                $itemList = $itemList . '<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+            if($type!=3) {
+                $itemCounter++;
+                if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter > ($page - 1) * 9) {
+                    $itemList = $itemList . '<div class="col-md-4 bottom-cd simpleCart_shelfItem">
                                             <div class="product-at">
-                                                <a href="index.php?action=SinglePage&id='. $item["id_annonce"] .'">
+                                                <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '">
                                                     <img class="img-responsive" src="images/annonces/' . $item["id_annonce"] . '.jpg">
                                                  </a>
                                              </div><p class="tun">' . $item["Titre"] . '</p>
-                                             <a href="index.php?action=SinglePage&id='. $item["id_annonce"] .'" class="item_add"><p class="number item_price"><i> </i>' . $item["Prix"] . ' CHF</p></a>
+                                             <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '" class="item_add"><p class="number item_price"><i> </i>' . $item["Prix"] . ' CHF</p></a>
                                           </div>';
-                $collCounter++;
+                    $collCounter++;
 
-                if ($collCounter == 3) {
-                    $itemList = $itemList . '<div class="clearfix"></div>';
-                    if ($itemCounter != 9) {
-                        $itemList = $itemList . '</div><div class=" bottom-product">';
+                    if ($collCounter == 3) {
+                        $itemList = $itemList . '<div class="clearfix"></div>';
+                        if ($itemCounter != 9) {
+                            $itemList = $itemList . '</div><div class=" bottom-product">';
+                        }
+                        $collCounter = 0;
                     }
-                    $collCounter = 0;
+                }
+            }else{
+                if(!in_array($item["Titre"],$ShowingServices)) {
+                    $itemCounter++;
+                    $ShowingServices[count($ShowingServices)] = $item["Titre"];
+                    if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter > ($page - 1) * 9) {
+                        $itemList = $itemList . '<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+                                            <div class="product-at">
+                                                <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '">
+                                                    <img class="img-responsive" src="images/annonces/' . $item["Titre"] . '.jpg">
+                                                 </a>
+                                             </div><p class="tun">' . $item["Titre"] . '</p>
+                                             <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '" class="item_add"><p class="number item_price"><i> </i>' . $item["Prix"] . ' CHF</p></a>
+                                          </div>';
+                        $collCounter++;
+
+                        if ($collCounter == 3) {
+                            $itemList = $itemList . '<div class="clearfix"></div>';
+                            if ($itemCounter != 9) {
+                                $itemList = $itemList . '</div><div class=" bottom-product">';
+                            }
+                            $collCounter = 0;
+                        }
+
+                    }
                 }
             }
         }
@@ -92,17 +119,21 @@ function login($Donnees){
     }
 }
 function Register($Donnees){
-    if(checkEmailTaken($Donnees["Email"])==true){
-        addUser($Donnees);
-        $_SESSION["id_utilisateur"]=$Donnees["Email"];
-        $_SESSION["Prenom"]=$Donnees["Prenom"];
-        $_SESSION["Nom"]=$Donnees["Nom"];
-        $_SESSION["Email"]=$Donnees["Email"];
-        $_SESSION["Adresse"]=$Donnees["Adresse"];
-        $_SESSION["NPA"]=$Donnees["NPA"];
-        require "view/home.php";
+    if($Donnees["password1"]==$Donnees["password2"]) {
+        if (checkEmailTaken($Donnees["Email"]) == true) {
+            addUser($Donnees);
+            $_SESSION["id_utilisateur"] = $Donnees["Email"];
+            $_SESSION["Prenom"] = $Donnees["Prenom"];
+            $_SESSION["Nom"] = $Donnees["Nom"];
+            $_SESSION["Email"] = $Donnees["Email"];
+            $_SESSION["Adresse"] = $Donnees["Adresse"];
+            $_SESSION["NPA"] = $Donnees["NPA"];
+            require "view/home.php";
+        } else {
+            require "view/register.php";
+        }
     }else{
-        require "view/login.php";
+        require "view/register.php";
     }
 }
 function logout(){
