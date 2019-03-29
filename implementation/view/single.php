@@ -154,7 +154,6 @@ $titre="Objet";
                     <p><?php echo $array[$id]["Description"];?></p>
                     <ul class="tag-men">
                         <?php if($array[$id]["Type"]!=3) :?>
-                        }
                         <li><span>ID</span>
                             <span class="women1"><?php echo $array[$id]["id_annonce"];?></span></li>
                     </ul>
