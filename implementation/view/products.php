@@ -120,17 +120,11 @@ $titre="RentASnow - Accueil";
 		<div class="clearfix"> </div>
 		<nav class="in">
 				  <ul class="pagination">
-					<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-					<li <?php if($page==1){echo 'class="active"';}?>><a href="index.php?action=<?php echo $typeText?>&page=1">1<span class="sr-only"></span></a></li>
-					<li <?php if($page==2){echo 'class="active"';}?>><a href="index.php?action=<?php echo $typeText?>&page=2">2<span class="sr-only"></span></a></li>
-					<li <?php if($page==3){echo 'class="active"';}?>><a href="index.php?action=<?php echo $typeText?>&page=3">3<span class="sr-only"></span></a></li>
-					<li <?php if($page==4){echo 'class="active"';}?>><a href="index.php?action=<?php echo $typeText?>&page=4">4<span class="sr-only"></span></a></li>
-					<li <?php if($page==5){echo 'class="active"';}?>><a href="index.php?action=<?php echo $typeText?>&page=5">5<span class="sr-only"></span></a></li>
-					 <li> <a href="#" aria-label="Next"><span aria-hidden="true">»</span> </a> </li>
+                      <?php print $bottombuttons?>
 				  </ul>
 				</nav>
-		</div>
-		
+            </div>
+        </div>
 		</div>
 			
 				<!---->

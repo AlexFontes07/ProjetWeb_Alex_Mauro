@@ -13,9 +13,19 @@ function openSingle_contact($id){
     $id-=1;
     require "view/single_contact.php";
 }
+
 function openSingle($id){
     $array=getItemDataBase();
     $id-=1;
+    $avalableServices="";
+    foreach($array as $item){
+        if($item["Type"]==3){
+            if($item["Titre"]==$array[$id]["Titre"]){
+                $avalableServices=$avalableServices.'<li><span><a href="index.php?action=SingleContactPage&id='.$array[$id]["id_annonce"].'" class="add-cart item_add">Contacter</a></span>';
+                $avalableServices=$avalableServices.'<span class="women1">'.getFName($item["id_utilisateur"]).' '.getLName($item["id_utilisateur"]) .'</span></li> ';
+            }
+        }
+    }
     require "view/single.php";
 }
 function openRegister(){
@@ -88,9 +98,34 @@ function openProducts($type,$page){
                     }
                 }
             }
+
         }
     }
+    $buttonclass="";
+    if($page==1) {
+        $buttonclass = 'class="disabled"';
+    }else{
+        $buttonclass='';
+    }
+    $buttonpage=$page-1;
+    $bottombuttons='<li '.$buttonclass.'><a href="index.php?action='.$typeText.'&page='.$buttonpage.'" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
 
+    $nbbuttons=($itemCounter/9)+1;
+    for ($i=1;$i<$nbbuttons;$i++){
+        if($page==$i){
+            $buttonclass='class="active"';
+        }else{
+            $buttonclass='';
+        }
+        $bottombuttons=$bottombuttons.'<li '.$buttonclass.'><a href="index.php?action='.$typeText.'&page='.$i.'">'.$i.'<span class="sr-only"></span></a></li>';
+    }
+    if($page==$nbbuttons){
+        $buttonclass='class="disabled"';
+    }else{
+        $buttonclass='';
+    }
+    $buttonpage=$page+1;
+    $bottombuttons=$bottombuttons.'<li '.$buttonclass.'> <a href="index.php?action='.$typeText.'&page='.$buttonpage.'" aria-label="Next"><span aria-hidden="true">»</span> </a> </li>';
     require "view/products.php";
 
 }
