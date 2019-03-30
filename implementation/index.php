@@ -35,7 +35,7 @@ if (isset($_GET['action'])) {
             openSingle($_GET["id"]);
             break;
         case "SingleContactPage":
-            openSingle_contact($_GET["id"]);
+            as($_GET["id"]);
             break;
         case "LoginAction";
             login($_POST);

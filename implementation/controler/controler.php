@@ -8,10 +8,14 @@
 
 require "model/model.php";
 function openSingle_contact($id){
-    $array=getItemDataBase();
-    $email=getEmail($array[$id]["id_utilisateur"]);
-    $id-=1;
-    require "view/single_contact.php";
+    if(isset($_SESSION["Email"])) {
+        $array = getItemDataBase();
+        $email = getEmail($array[$id]["id_utilisateur"]);
+        $id -= 1;
+        require "view/single_contact.php";
+    }else{
+        openLogin();
+    }
 }
 
 function openSingle($id){
@@ -21,7 +25,7 @@ function openSingle($id){
     foreach($array as $item){
         if($item["Type"]==3){
             if($item["Titre"]==$array[$id]["Titre"]){
-                $avalableServices=$avalableServices.'<li><span><a href="index.php?action=SingleContactPage&id='.$array[$id]["id_annonce"].'" class="add-cart item_add">Contacter</a></span>';
+                $avalableServices=$avalableServices.'<li><span><a href="index.php?action=SingleContactPage&id='.$item["id_annonce"].'" class="add-cart item_add">Contacter</a></span>';
                 $avalableServices=$avalableServices.'<span class="women1">'.getFName($item["id_utilisateur"]).' '.getLName($item["id_utilisateur"]) .'</span></li> ';
             }
         }
