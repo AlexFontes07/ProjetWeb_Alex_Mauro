@@ -176,4 +176,37 @@ function logout(){
     require "view/home.php";
 }
 
+function showAnnonces(){
+    $array=getItemDataBase();
+    $listeAnnonces="";
+    foreach($array as $item){
+        if($item["id_utilisateur"]==$_SESSION["id_utilisateur"]){
+            $listeAnnonces=$listeAnnonces.'<tr><form><th>'.$item["id_annonce"].'</th>';
+            $listeAnnonces=$listeAnnonces.'<th>'.$item["Type"].'</th>';
+            if($item["Type"]==3){
+                $modifiable=" disabled";
+            }else{
+                $modifiable="";
+            }
+            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" value="'.$item["Titre"].'" type="text"'.$modifiable.'></th>';
+            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" value="'.$item["Prix"].'" type="text"'.$modifiable.'></th>';
+            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" value="'.$item["Description"].'" type="text"'.$modifiable.'></th>';
+            if($item["Type"]==3){
+                $listeAnnonces=$listeAnnonces."<th>impossible de changer d'image</th>";
+            }else{
+                $listeAnnonces=$listeAnnonces.'<th><input type="file" name="fileToUpload" id="fileToUpload"></th>';
+            }
+
+            if($item["Prix"]>0){
+                $chkstatus=" Checked";
+            }else{
+                $chkstatus="";
+            }
+            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" type="checkbox" name=chk"'.$item["id_annonce"].'"'.$chkstatus.'>Cocher si dispo.</th>';
+            $listeAnnonces=$listeAnnonces.'<th><button type="submit" value="Submit">Enregistrer</button></th></form></tr>';
+        }
+    }
+    require "view/annonces.php";
+}
+
 ?>

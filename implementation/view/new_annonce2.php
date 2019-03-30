@@ -16,6 +16,20 @@ ob_start();
 $titre="RentASnow - Accueil";
 ?>
 <!--content-->
+<script type="text/javascript">
+    function change()
+    {
+        var value = document.getElementById('type').value;
+        if(value == 'proposerService')
+        {
+            document.getElementById('add').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('add').style.display = 'none';
+        }
+    }
+</script>
 <div class="contact">
 			
 			<div class="container">
@@ -23,27 +37,27 @@ $titre="RentASnow - Accueil";
 				
 				<div class="col-md-8 contact-grid">
 					<form>
-                        <SELECT name="type" size="1">
-                            <OPTION>Vendre </OPTION>
-                            <OPTION onclick="document.getElementById('chk_services').hide();">Louer</OPTION>
-                            <OPTION>Proposer un service</OPTION>
+                        <SELECT name="type" id="type" onchange="change();" size="1">
+                            <OPTION value="vendre">Vendre </OPTION>
+                            <OPTION value="louer">Louer</OPTION>
+                            <OPTION value="proposerService">Proposer un service</OPTION>
                         </SELECT>
 
 
-                        <SELECT id="chk_services" name="type" size="1">
-                            <OPTION>Jardinage</OPTION>
-                            <OPTION>Déménagement</OPTION>
-                            <OPTION>Ménage</OPTION>
-                            <OPTION>Garde d'enfants</OPTION>
-                            <OPTION>Garde d'animaux</OPTION>
-                            <OPTION>Informatique</OPTION>
+                        <SELECT id="add" name="add" style="display:none" size="1">
+                            <OPTION value="jardinage">Jardinage</OPTION>
+                            <OPTION value="demenagement">Déménagement</OPTION>
+                            <OPTION value="menage">Ménage</OPTION>
+                            <OPTION value="gardeChien">Garde de chien</OPTION>
+                            <OPTION value="gardeChat">Garde de chat</OPTION>
+                            <OPTION value="informatique">Informatique</OPTION>
                         </SELECT>
 
 
-						<input type="text" value="Nom" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Nom';}">
+						<input type="text" value="<?php echo $_SESSION["Nom"]. " " .$_SESSION["Prenom"];?>" disabled>
                         <br>
 						<div class="send">
-							<input type="submit" value="Envoyer">
+							<input type="submit" value="Ajouter">
 						</div>
 					</form>
 				</div>
@@ -58,7 +72,7 @@ $titre="RentASnow - Accueil";
 						<div class="address-more">
 						<h4>Informations</h4>
 							<p>Tel: 078/999.99.99</p>
-							<p>Email:<a href="mailto:contact@cpnv.ch"> contact@cpnv.ch
+							<p>Email: contact@cpnv.ch
 					
 				</div>
 				<div class="clearfix"> </div>

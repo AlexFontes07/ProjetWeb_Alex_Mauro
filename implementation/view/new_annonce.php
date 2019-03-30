@@ -53,7 +53,7 @@ $titre="RentASnow - Accueil";
 						<div class="address-more">
 						<h4>Informations</h4>
 							<p>Tel: 078/999.99.99</p>
-							<p>Email:<a href="mailto:contact@cpnv.ch"> contact@cpnv.ch
+							<p>Email: contact@cpnv.ch
 					
 				</div>
 				<div class="clearfix"> </div>

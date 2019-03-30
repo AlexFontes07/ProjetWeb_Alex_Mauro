@@ -27,16 +27,7 @@ $titre="RentASnow - Accueil";
             <th>Disponibilité</th>
             <th>Enregistrer</th>
         </tr>
-        <tr>
-            <th>1</th>
-            <th>Vente</th>
-            <th><input class="inputCenter" value="Xbox" type="text"></th>
-            <th><input class="inputCenter" value="100" type="text"></th>
-            <th><input class="inputCenter" value="Belle Xbox" type="text"></th>
-            <th><input type="file" name="fileToUpload" id="fileToUpload"></th>
-            <th><input class="inputCenter" type="checkbox" name="vehicle1" value="Bike">Cocher si dispo.</th>
-            <th><button type="submit" value="Submit">Enregistrer</button></th>
-        </tr>
+        <?php echo $listeAnnonces;?>
     </table>
 </div>
 <?php

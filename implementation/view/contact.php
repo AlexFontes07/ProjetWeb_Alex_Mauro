@@ -24,9 +24,9 @@ $titre="RentASnow - Accueil";
 				
 				<div class="col-md-8 contact-grid">
 					<form>	
-						<input type="text" value="Nom" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Nom';}">
+						<input type="text" value="<?php echo $_SESSION["Nom"]. " " .$_SESSION["Prenom"];?>" disabled>
 					
-						<input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
+						<input type="text" value="<?php echo $_SESSION["Email"];?>" disabled>
 						<input type="text" value="Sujet" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Sujet';}">
 						
 						<textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
@@ -46,7 +46,7 @@ $titre="RentASnow - Accueil";
 						<div class="address-more">
 						<h4>Informations</h4>
 							<p>Tel: 078/999.99.99</p>
-							<p>Email:<a href="mailto:contact@cpnv.ch"> contact@cpnv.ch
+							<p>Email: contact@cpnv.ch
 					
 				</div>
 				<div class="clearfix"> </div>
