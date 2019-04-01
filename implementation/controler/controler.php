@@ -10,8 +10,9 @@ require "model/model.php";
 function openSingle_contact($id){
     if(isset($_SESSION["Email"])) {
         $array = getItemDataBase();
-        $email = getEmail($array[$id]["id_utilisateur"]);
         $id -= 1;
+        $venteur=getLName($array[$id]["id_utilisateur"])." ".getFName($array[$id]["id_utilisateur"]);
+        $email = getEmail($array[$id]["id_utilisateur"]);
         require "view/single_contact.php";
     }else{
         openLogin();
@@ -55,36 +56,14 @@ function openProducts($type,$page){
     }
     foreach($array as $item){
         if($item["Type"]==$type) {
-            if($type!=3) {
-                $itemCounter++;
-                if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter > ($page - 1) * 9) {
-                    $itemList = $itemList . '<div class="col-md-4 bottom-cd simpleCart_shelfItem">
-                                            <div class="product-at">
-                                                <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '">
-                                                    <img class="img-responsive" src="images/annonces/' . $item["id_annonce"] . '.jpg">
-                                                 </a>
-                                             </div><p class="tun">' . $item["Titre"] . '</p>
-                                             <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '" class="item_add"><p class="number item_price"><i> </i>' . $item["Prix"] . ' CHF</p></a>
-                                          </div>';
-                    $collCounter++;
-
-                    if ($collCounter == 3) {
-                        $itemList = $itemList . '<div class="clearfix"></div>';
-                        if ($itemCounter != 9) {
-                            $itemList = $itemList . '</div><div class=" bottom-product">';
-                        }
-                        $collCounter = 0;
-                    }
-                }
-            }else{
-                if(!in_array($item["Titre"],$ShowingServices)) {
+            if($item["Disponiblite"]!=0) {
+                if ($type != 3) {
                     $itemCounter++;
-                    $ShowingServices[count($ShowingServices)] = $item["Titre"];
                     if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter > ($page - 1) * 9) {
                         $itemList = $itemList . '<div class="col-md-4 bottom-cd simpleCart_shelfItem">
                                             <div class="product-at">
                                                 <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '">
-                                                    <img class="img-responsive" src="images/annonces/' . $item["Titre"] . '.jpg">
+                                                    <img class="img-responsive" src="images/annonces/' . $item["id_annonce"] . '.jpg">
                                                  </a>
                                              </div><p class="tun">' . $item["Titre"] . '</p>
                                              <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '" class="item_add"><p class="number item_price"><i> </i>' . $item["Prix"] . ' CHF</p></a>
@@ -98,7 +77,31 @@ function openProducts($type,$page){
                             }
                             $collCounter = 0;
                         }
+                    }
+                } else {
+                    if (!in_array($item["Titre"], $ShowingServices)) {
+                        $itemCounter++;
+                        $ShowingServices[count($ShowingServices)] = $item["Titre"];
+                        if ($itemCounter <= 9 + ($page - 1) * 9 & $itemCounter > ($page - 1) * 9) {
+                            $itemList = $itemList . '<div class="col-md-4 bottom-cd simpleCart_shelfItem">
+                                            <div class="product-at">
+                                                <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '">
+                                                    <img class="img-responsive" src="images/annonces/' . $item["Titre"] . '.jpg">
+                                                 </a>
+                                             </div><p class="tun">' . $item["Titre"] . '</p>
+                                             <a href="index.php?action=SinglePage&id=' . $item["id_annonce"] . '" class="item_add"><p class="number item_price"><i> </i>' . $item["Prix"] . ' CHF</p></a>
+                                          </div>';
+                            $collCounter++;
 
+                            if ($collCounter == 3) {
+                                $itemList = $itemList . '<div class="clearfix"></div>';
+                                if ($itemCounter != 9) {
+                                    $itemList = $itemList . '</div><div class=" bottom-product">';
+                                }
+                                $collCounter = 0;
+                            }
+
+                        }
                     }
                 }
             }
@@ -185,32 +188,113 @@ function showAnnonces(){
     $listeAnnonces="";
     foreach($array as $item){
         if($item["id_utilisateur"]==$_SESSION["id_utilisateur"]){
-            $listeAnnonces=$listeAnnonces.'<tr><form><th>'.$item["id_annonce"].'</th>';
+            $listeAnnonces=$listeAnnonces.'<tr><form enctype="multipart/form-data" action="index.php?action=update&id='.$item["id_annonce"].'" method="post"><th>'.$item["id_annonce"].'</th>';
             $listeAnnonces=$listeAnnonces.'<th>'.$item["Type"].'</th>';
             if($item["Type"]==3){
                 $modifiable=" disabled";
             }else{
                 $modifiable="";
             }
-            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" value="'.$item["Titre"].'" type="text"'.$modifiable.'></th>';
-            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" value="'.$item["Prix"].'" type="text"'.$modifiable.'></th>';
-            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" value="'.$item["Description"].'" type="text"'.$modifiable.'></th>';
+            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" name="Titre" value="'.$item["Titre"].'" type="text"'.$modifiable.'></th>';
+            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" name="Prix" value="'.$item["Prix"].'" type="number"'.$modifiable.'></th>';
+            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" name="Desc" value="'.$item["Description"].'" type="text"'.$modifiable.'></th>';
             if($item["Type"]==3){
-                $listeAnnonces=$listeAnnonces."<th>impossible de changer d'image</th>";
+                $listeAnnonces=$listeAnnonces."<th>impossible de changer l'image</th>";
             }else{
-                $listeAnnonces=$listeAnnonces.'<th><input type="file" name="fileToUpload" id="fileToUpload"></th>';
+                $listeAnnonces=$listeAnnonces.'<th><input accept=".jpg" type="file" name="Upload" id="fileToUpload"></th>';
             }
 
-            if($item["Prix"]>0){
+            if($item["Disponiblite"]==1){
                 $chkstatus=" Checked";
             }else{
                 $chkstatus="";
             }
-            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" type="checkbox" name=chk"'.$item["id_annonce"].'"'.$chkstatus.'>Cocher si dispo.</th>';
+            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" type="checkbox" name="Chk" '.$chkstatus.'>Cocher si dispo.</th>';
             $listeAnnonces=$listeAnnonces.'<th><button type="submit" value="Submit">Enregistrer</button></th></form></tr>';
         }
     }
     require "view/annonces.php";
 }
+function addUser($data){
+    $array=getUserDataBase();
+    $userID=count($array);
+    $array[$userID]["id_utilisateur"]=$userID+1;
+    $array[$userID]["nom"]=$data["Nom"];
+    $array[$userID]["Prenom"]=$data["Prenom"];
+    $array[$userID]["Email"]=$data["Email"];
+    $array[$userID]["Password"]=$data["password1"];
+    $array[$userID]["Adresse"]=$data["Adresse"];
+    $array[$userID]["NPA"]=$data["NPA"];
+    updateUsers($array);
 
+}
+function updateArticle($id,$donnees){
+
+    $array=getItemDataBase();
+    if($array[$id-1]["Type"]!=3){
+        if($_FILES["Upload"]["size"]!=0) {
+            move_uploaded_file($_FILES["Upload"]["tmp_name"], 'images/annonces/' . $id . '.jpg');
+        }
+        $array[$id-1]["Titre"]=$donnees["Titre"];
+        $array[$id-1]["Prix"]=$donnees["Prix"];
+        $array[$id-1]["Description"]=$donnees["Desc"];
+        if($donnees["Chk"]=="on"){
+            $array[$id-1]["Disponiblite"]=1;
+        }else{
+            $array[$id-1]["Disponiblite"]=0;
+        }
+    }else{
+        if($donnees["Chk"]=="on"){
+            $array[$id-1]["Disponiblite"]=1;
+        }else{
+            $array[$id-1]["Disponiblite"]=0;
+        }
+    }
+
+    updateItems($array);
+    showAnnonces();
+}
+function addItem($donnees){
+    $array=getItemDataBase();
+    $type=0;
+    $id=count($array);
+    if($donnees["type"]=="vendre"){
+        $type=1;
+    }else{
+        if($donnees["type"]=="louer"){
+            $type=2;
+        }else{
+            $type=3;
+        }
+    }
+    if($type!=3){
+        $array[$id]["id_annonce"]=$id+1;
+        $array[$id]["Titre"]=$donnees["Name"];
+        $array[$id]["Prix"]=$donnees["Prix"];
+        $array[$id]["Description"]=$donnees["Desc"];
+        $array[$id]["Type"]=$type;
+        $array[$id]["Disponiblite"]=1;
+        $array[$id]["id_utilisateur"]=$_SESSION["id_utilisateur"];
+        if($_FILES["Upload"]["size"]!=0) {
+            $imgName=$id+1;
+            move_uploaded_file($_FILES["Upload"]["tmp_name"], 'images/annonces/' .  $imgName . '.jpg');
+        }
+    }else{
+        switch ($donnees["add"]){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+
+        }
+    }
+    updateItems($array);
+    showAnnonces();
+}
 ?>

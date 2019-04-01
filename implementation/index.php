@@ -37,20 +37,26 @@ if (isset($_GET['action'])) {
         case "SingleContactPage":
             openSingle_contact($_GET["id"]);
             break;
-        case "LoginAction";
+        case "LoginAction":
             login($_POST);
             break;
-        case "RegisterAction";
+        case "RegisterAction":
             register($_POST);
             break;
-        case "Logout";
+        case "Logout":
             logout();
             break;
         case "annonces":
             showAnnonces();
             break;
-        case "new_annonce";
+        case "new_annonce":
             require "view/new_annonce.php";
+            break;
+        case "update":
+            updateArticle($_GET["id"],$_POST);
+            break;
+        case"addItem":
+            addItem($_POST);
             break;
         default :
             openHome();

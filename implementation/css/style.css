@@ -662,7 +662,7 @@ ul.social li i:hover{
 	border:none;
 	padding: 0 15px;
 }
-.contact-grid input[type="text"],.contact-grid textarea{
+.contact-grid input[type="number"], .contact-grid input[type="text"],.contact-grid textarea{
 	width: 100%;
 	padding: 1em;
 	margin: 0.5em 0;
@@ -1479,7 +1479,7 @@ a.add-re:hover{
 .account-top div{
 	padding:0.5em 0;
 }
-.account-top input[type="text"],.account-top input[type="email"],
+.account-top input[type="text"],.account-top input[type="number"],.account-top input[type="email"],
 .account-top textarea,.account-top input[type="password"]{
 	padding:1em;
 	width:100%;
@@ -2360,7 +2360,7 @@ a.item_add p.number {
 .contact-grid ,.contact-in{
   padding: 0;
 }
-.contact-grid input[type="text"],.contact-grid input[type="Email"], .contact-grid textarea {
+.contact-grid input[type="text"],contact-grid input[type="number"],.contact-grid input[type="Email"], .contact-grid textarea {
   padding: 0.8em;
 }
 .send input[type="submit"] {

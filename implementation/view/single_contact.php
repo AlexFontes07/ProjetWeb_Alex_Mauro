@@ -24,9 +24,9 @@ $titre="RentASnow - Accueil";
         <div class="account-pass">
             <div class="col-md-8 account-top">
                 <form>
-                    <input type="text" value="Nom" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Nom';}">
+                    <input type="text" value="<?php echo $venteur;?>" disabled>
 
-                    <input type="text" value="<?php echo $email;?>" onblur="if (this.value == '') {this.value ='<?php echo $email;?>';}"  disabled>
+                    <input type="text" value="<?php echo $email;?>" disabled>
 
                     <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
                     <input type="submit" value="Envoyer">
