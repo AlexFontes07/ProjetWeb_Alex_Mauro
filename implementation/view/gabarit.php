@@ -27,12 +27,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="header">
     <div class="header-top">
         <div class="container">
-            <div class="search">
-                <form>
-                    <input type="text" value="Search " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-                    <input type="submit" value="Go">
-                </form>
-            </div>
             <div class="header-left">
                 <ul>
                     <?php if(!isset($_SESSION["Email"])){

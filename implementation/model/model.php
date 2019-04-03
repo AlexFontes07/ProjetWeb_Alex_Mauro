@@ -20,7 +20,7 @@ function getUserId($email,$password){
     $array=getUserDataBase();
     foreach($array as $user){
         if($user["Email"]==$email){
-            if($user["Password"]==$password){
+            if(password_verify ($password,$user["Password"])){
                 $tempId=$user["id_utilisateur"];
             }
         }

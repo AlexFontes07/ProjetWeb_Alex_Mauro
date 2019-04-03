@@ -295,5 +295,14 @@
         "Type": 3,
         "Disponiblite": 1,
         "id_utilisateur": 13
+    },
+    {
+        "id_annonce": 34,
+        "Titre": "Nintendo switch",
+        "Description": " bonne qualite",
+        "Prix": "200",
+        "Type": 1,
+        "Disponiblite": 1,
+        "id_utilisateur": 12
     }
 ]

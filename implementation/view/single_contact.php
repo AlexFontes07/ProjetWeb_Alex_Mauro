@@ -23,12 +23,12 @@ $titre="RentASnow - Accueil";
         <h1><?php echo $array[$id]["Titre"];?></h1>
         <div class="account-pass">
             <div class="col-md-8 account-top">
-                <form>
+                <form action="index.php?action=sendmail&id=<?php echo $array[$id]["id_annonce"];?>" method="post">
                     <input type="text" value="<?php echo $venteur;?>" disabled>
 
                     <input type="text" value="<?php echo $email;?>" disabled>
 
-                    <textarea cols="77" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+                    <textarea cols="77" rows="6" value=" " name="message" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
                     <input type="submit" value="Envoyer">
                 </form>
             </div>

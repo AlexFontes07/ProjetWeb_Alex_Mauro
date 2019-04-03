@@ -229,7 +229,7 @@ function addUser($data){
     $array[$userID]["nom"]=$data["Nom"];
     $array[$userID]["Prenom"]=$data["Prenom"];
     $array[$userID]["Email"]=$data["Email"];
-    $array[$userID]["Password"]=$data["password1"];
+    $array[$userID]["Password"]=password_hash($data["password1"], PASSWORD_DEFAULT);
     $array[$userID]["Adresse"]=$data["Adresse"];
     $array[$userID]["NPA"]=$data["NPA"];
     updateUsers($array);
@@ -364,7 +364,7 @@ function sendMail($donnees,$id)
         $email="Alexandre.Fontes@cpnv.ch";
         $subject=$donnees["Sujet"];
     }else{
-        $email=$arrayUsers[$arrayProducts[$id-1]["id_utilisateur"]]["Email"];
+        $email=$arrayUsers[$arrayProducts[$id-1]["id_utilisateur"]-1]["Email"];
         $subject="Reponse à votre annonce de ".$arrayProducts[$id-1]["Titre"];
     }
 
