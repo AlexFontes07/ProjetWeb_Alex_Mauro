@@ -23,26 +23,18 @@ $titre="RentASnow - Accueil";
 			<div class="contact-form">
 				
 				<div class="col-md-8 contact-grid">
-					<form method="post">
+					<form method="post" action="index.php?action=sendmail">
 						<input type="text" name="info" value="<?php echo $_SESSION["Nom"]. " " .$_SESSION["Prenom"];?>" disabled>
 					
 						<input type="text" name="email" value="<?php echo $_SESSION["Email"];?>" disabled>
-						<input type="text" name="sujet" value="Sujet" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Sujet';}">
+						<input type="text" name="sujet" value="Sujet" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Sujet';}" required>
 						
-						<textarea cols="77" rows="6" name="message" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+						<textarea cols="77" rows="6" name="message" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}" required>Message</textarea>
 						<div class="send">
 							<input type="submit" value="Envoyer">
 						</div>
 					</form>
-                    <?php
-                    if (isset($_POST['message'])) {
-                            $retour=mail('alexandre.fontes@cpnv.ch','Envoi depuis page Contact', $_POST['message'], 'From : ' . $_POST['email']);
-                            if($retour)
-                                echo '<p>Votre message a été envoyé.</p>';
-                            else
-                                echo '<p>Erreur.</p>';
-                    }
-                    ?>
+
 				</div>
 				<div class="col-md-4 contact-in">
 

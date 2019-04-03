@@ -58,6 +58,13 @@ if (isset($_GET['action'])) {
         case"addItem":
             addItem($_POST);
             break;
+        case"sendmail":
+            if(!isset($_GET["id"])){
+                $_GET["id"]=0;
+            }
+            sendMail($donnees,$_GET["id"]);
+            break;
+
         default :
             openHome();
             break;

@@ -349,4 +349,26 @@ function addItem($donnees){
     updateItems($array);
     showAnnonces();
 }
+function sendMail($donnees,$id)
+{
+    $email="";
+    $subject="";
+    $headers=array(
+        'From' => $_SESSION["Email"],
+        'Reply-To' => $_SESSION["Email"],
+        'X-Mailer' => 'PHP/' . phpversion()
+    );
+    $arrayProducts=getItemDataBase();
+    $arrayUsers=getUserDataBase();
+    if($id==0){
+        $email="Alexandre.Fontes@cpnv.ch";
+        $subject=$donnees["Sujet"];
+    }else{
+        $email=$arrayUsers[$arrayProducts[$id-1]["id_utilisateur"]]["Email"];
+        $subject="Reponse à votre annonce de ".$arrayProducts[$id-1]["Titre"];
+    }
+
+
+    mail($email, $subject, $donnees['message'], $headers);
+}
 ?>
