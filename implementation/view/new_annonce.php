@@ -29,6 +29,12 @@ $titre="RentASnow - Accueil";
             document.getElementById('affDesc').style.display = 'none';
             document.getElementById('add').style.display = 'block';
 
+            document.getElementById('affName').required = false;
+            document.getElementById('affPrix').required = false;
+            document.getElementById('fileToUpload').required = false;
+            document.getElementById('affDesc').required = false;
+            document.getElementById('add').required = true;
+
             document.getElementById('affNamelbl').style.display = 'none';
             document.getElementById('affPrixlbl').style.display = 'none';
             document.getElementById('fileToUploadlbl').style.display = 'none';
@@ -49,6 +55,12 @@ $titre="RentASnow - Accueil";
             document.getElementById('fileToUpload').style.display = 'block';
             document.getElementById('affDesc').style.display = 'block';
             document.getElementById('add').style.display = 'none';
+
+            document.getElementById('affName').required = true;
+            document.getElementById('affPrix').required = true;
+            document.getElementById('fileToUpload').required = true;
+            document.getElementById('affDesc').required = true;
+            document.getElementById('add').required = false;
         }
     }
 </script>
@@ -68,23 +80,27 @@ $titre="RentASnow - Accueil";
                         <label id="addlbl" style="display:none" for="add">Service que vous voulez proposer</label>
                         <SELECT id="add" name="add" style="display:none" size="1">
                             <OPTION value="1">Jardinage</OPTION>
-                            <OPTION value="2">Déménagement</OPTION>
-                            <OPTION value="3">Ménage</OPTION>
-                            <OPTION value="3">Garde de chien</OPTION>
-                            <OPTION value="4">Garde de chat</OPTION>
-                            <OPTION value="5">Informatique</OPTION>
+                            <OPTION value="2">Aide au Déménagement</OPTION>
+                            <OPTION value="3">Garde d'enfants</OPTION>
+                            <OPTION value="4">Garde de chien</OPTION>
+                            <OPTION value="5">Garde de chat</OPTION>
+                            <OPTION value="6">Lavage de voiture</OPTION>
+                            <OPTION value="7">Nettoyage de PC</OPTION>
+                            <OPTION value="8">Tondre la pelouse</OPTION>
+                            <OPTION value="9">Repassage</OPTION>
+                            <OPTION value="10">Lavage de vitres</OPTION>
                         </SELECT>
                         <br>
                         <label id="vendNamelbl" for="vendName">Votre Nom</label>
                         <input type="text" id="vendName" name="sellerName" style="display:block" value="<?php echo $_SESSION["Nom"].' '.$_SESSION["Prenom"] ?>" disabled>
                         <label id="affNamelbl" for="affName">Nom du Produit</label>
-                        <input type="text" id="affName" name="Name" style="display:block" value="Nom du produit" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Nom du produit';}">
+                        <input type="text" id="affName" name="Name" style="display:block" required>
                         <label id="affPrixlbl" for="affPrix">Prix du Produit</label>
-                        <input type="number" id="affPrix" name="Prix" style="display:block" value="Prix" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Prix';}">
+                        <input type="number" id="affPrix" name="Prix" style="display:block" required>
                         <label id="affDesclbl" for="affDesc">Description du produit</label>
-                        <textarea cols="77" id="affDesc" name="Desc" style="display:block" rows="6" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Description';}">Description</textarea>
+                        <textarea cols="77" id="affDesc" name="Desc" style="display:block" rows="6" required> </textarea>
                         <label id="fileToUploadlbl" for="fileToUpload">Image du produit</label>
-                        <input type="file" id="fileToUpload" name="Upload" style="display:block" >
+                        <input type="file" id="fileToUpload" name="Upload" style="display:block" required>
                         <br>
 
                         <div class="send">
@@ -111,6 +127,7 @@ $titre="RentASnow - Accueil";
 		</div>
 		
 	</div>
+</div>
 <!--//content-->
 <?php
 $contenu = ob_get_clean();

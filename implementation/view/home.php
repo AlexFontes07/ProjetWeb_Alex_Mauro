@@ -64,7 +64,7 @@ $titre="RentASnow - Accueil";
 		<h1>NOS CATÉGORIES</h1>
 		<div class="grid-in">
 			<div class="col-md-4 grid-top">
-				<a href="index.php?action=listItemsA" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi.jpg" alt="">
+				<a href="index.php?action=listItemsA" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi.png" alt="">
 							<div class="b-wrapper">
 									<h3 class="b-animate b-from-left    b-delay03 ">
 										<span>Acheter</span>
@@ -76,7 +76,7 @@ $titre="RentASnow - Accueil";
 			<p><a href="index.php?action=listItemsA">Acheter</a></p>
 			</div>
 			<div class="col-md-4 grid-top">
-				<a href="index.php?action=listItemsL" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi1.jpg" alt="">
+				<a href="index.php?action=listItemsL" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi1.png" alt="">
 					<div class="b-wrapper">
 									<h3 class="b-animate b-from-left    b-delay03 ">
 										<span>Louer</span>
@@ -86,7 +86,7 @@ $titre="RentASnow - Accueil";
 			<p><a href="index.php?action=listItemsL">Louer</a></p>
 			</div>
 			<div class="col-md-4 grid-top">
-				<a href="index.php?action=listServices" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi2.jpg" alt="">
+				<a href="index.php?action=listServices" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi2.png" alt="">
 					<div class="b-wrapper">
 									<h3 class="b-animate b-from-left    b-delay03 ">
 										<span>Services</span>

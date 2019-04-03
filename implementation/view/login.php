@@ -19,7 +19,7 @@ $titre="RentASnow - Accueil";
 <!--content-->
 <div class="container">
     <div class="account">
-        <h1>Account</h1>
+        <h1>Connexion</h1>
         <div class="account-pass">
             <div class="col-md-8 account-top">
                 <form action="index.php?action=LoginAction" id="Login" method="Post" name="formRegister">
@@ -38,10 +38,6 @@ $titre="RentASnow - Accueil";
                 </form>
             </div>
             <div class="col-md-4 left-account ">
-                <a href="single.html"><img class="img-responsive " src="images/s1.jpg" alt=""></a>
-                <div class="five">
-                    <h2>25% </h2><span>discount</span>
-                </div>
                 <div class="clearfix"> </div>
             </div>
             <div class="clearfix"> </div>

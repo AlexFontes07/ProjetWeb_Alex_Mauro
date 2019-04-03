@@ -25,9 +25,11 @@ function openSingle($id){
     $avalableServices="";
     foreach($array as $item){
         if($item["Type"]==3){
-            if($item["Titre"]==$array[$id]["Titre"]){
-                $avalableServices=$avalableServices.'<li><span><a href="index.php?action=SingleContactPage&id='.$item["id_annonce"].'" class="add-cart item_add">Contacter</a></span>';
-                $avalableServices=$avalableServices.'<span class="women1">'.getFName($item["id_utilisateur"]).' '.getLName($item["id_utilisateur"]) .'</span></li> ';
+            if($item["Disponiblite"]!=0) {
+                if ($item["Titre"] == $array[$id]["Titre"]) {
+                    $avalableServices = $avalableServices . '<li><span><a href="index.php?action=SingleContactPage&id=' . $item["id_annonce"] . '" class="add-cart item_add">Contacter</a></span>';
+                    $avalableServices = $avalableServices . '<span class="women1">' . getFName($item["id_utilisateur"]) . ' ' . getLName($item["id_utilisateur"]) . '</span></li> ';
+                }
             }
         }
     }
@@ -143,7 +145,12 @@ function openHome(){
     require "view/home.php";
 }
 function openContact(){
-    require "view/contact.php";
+    if(isset($_SESSION["id_utilisateur"])){
+        require "view/contact.php";
+    }else{
+        openLogin();
+    }
+
 }
 function login($Donnees){
     $userId=-1;
@@ -270,8 +277,8 @@ function addItem($donnees){
     if($type!=3){
         $array[$id]["id_annonce"]=$id+1;
         $array[$id]["Titre"]=$donnees["Name"];
-        $array[$id]["Prix"]=$donnees["Prix"];
         $array[$id]["Description"]=$donnees["Desc"];
+        $array[$id]["Prix"]=$donnees["Prix"];
         $array[$id]["Type"]=$type;
         $array[$id]["Disponiblite"]=1;
         $array[$id]["id_utilisateur"]=$_SESSION["id_utilisateur"];
@@ -280,19 +287,64 @@ function addItem($donnees){
             move_uploaded_file($_FILES["Upload"]["tmp_name"], 'images/annonces/' .  $imgName . '.jpg');
         }
     }else{
+        $array[$id]["id_annonce"]=$id+1;
         switch ($donnees["add"]){
             case 1:
+                $array[$id]["Titre"]="Jardinage";
+                $array[$id]["Description"]="magnis dis parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla eu";
+                $array[$id]["Prix"]=35;
                 break;
             case 2:
+                $array[$id]["Titre"]="Aide au Déménagement";
+                $array[$id]["Description"]="Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis";
+                $array[$id]["Prix"]=40;
                 break;
             case 3:
+                $array[$id]["Titre"]="Garde d'enfants";
+                $array[$id]["Description"]="amet luctus vulputate, nisi sem semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc.";
+                $array[$id]["Prix"]=50;
                 break;
             case 4:
+                $array[$id]["Titre"]="Garde de chien";
+                $array[$id]["Description"]="dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per";
+                $array[$id]["Prix"]=30;
                 break;
             case 5:
+                $array[$id]["Titre"]="Garde de chat";
+                $array[$id]["Description"]="non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim,";
+                $array[$id]["Prix"]=20;
+                break;
+            case 6:
+                $array[$id]["Titre"]="Lavage de voiture";
+                $array[$id]["Description"]="erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed";
+                $array[$id]["Prix"]=20;
+                break;
+            case 7:
+                $array[$id]["Titre"]="Nettoyage de PC";
+                $array[$id]["Description"]="pharetra, felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In lorem. Donec elementum, lorem";
+                $array[$id]["Prix"]=90;
+                break;
+            case 8:
+                $array[$id]["Titre"]="Tondre la pelouse";
+                $array[$id]["Description"]="Praesent eu dui. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique";
+                $array[$id]["Prix"]=40;
+                break;
+            case 9:
+                $array[$id]["Titre"]="Repassage";
+                $array[$id]["Description"]="in molestie tortor nibh sit amet orci. Ut sagittis lobortis mauris. Suspendisse aliquet molestie tellus. Aenean egestas hendrerit neque. In";
+                $array[$id]["Prix"]=40;
+                break;
+            case 10:
+                $array[$id]["Titre"]="Lavage de vitres";
+                $array[$id]["Description"]="nascetur ridiculus mus. Proin vel nisl. Quisque fringilla euismod enim. Etiam gravida molestie arcu. Sed eu nibh vulputate mauris sagittis";
+                $array[$id]["Prix"]=50;
                 break;
 
         }
+        $array[$id]["Type"]=3;
+        $array[$id]["Disponiblite"]=1;
+        $array[$id]["id_utilisateur"]=$_SESSION["id_utilisateur"];
+
     }
     updateItems($array);
     showAnnonces();

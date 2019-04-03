@@ -16,6 +16,7 @@ $titre="RentASnow - Accueil";
 <div class="account">
     <h1>Mes annonces</h1>
     <p style="text-align: left;"><a href='index.php?action=new_annonce'><button>Ajouter une annonce</button></a></p>
+    <div class="clearfix"> </div>
     <table class="table textcolor">
         <tr>
             <th>ID</th>
@@ -29,6 +30,8 @@ $titre="RentASnow - Accueil";
         </tr>
         <?php echo $listeAnnonces;?>
     </table>
+    <div class="clearfix"> </div>
+</div>
 </div>
 <?php
 $contenu = ob_get_clean();
