@@ -362,13 +362,15 @@ function sendMail($donnees,$id)
     $arrayUsers=getUserDataBase();
     if($id==0){
         $email="Alexandre.Fontes@cpnv.ch";
-        $subject=$donnees["Sujet"];
+        $subject=$donnees["sujet"];
     }else{
         $email=$arrayUsers[$arrayProducts[$id-1]["id_utilisateur"]-1]["Email"];
-        $subject="Reponse à votre annonce de ".$arrayProducts[$id-1]["Titre"];
+        $subject='Reponse a votre annonce : "'.$arrayProducts[$id-1]["Titre"].'"';
     }
 
 
     mail($email, $subject, $donnees['message'], $headers);
+
+    openHome();
 }
 ?>

@@ -62,7 +62,7 @@ if (isset($_GET['action'])) {
             if(!isset($_GET["id"])){
                 $_GET["id"]=0;
             }
-            sendMail($donnees,$_GET["id"]);
+            sendMail($_POST,$_GET["id"]);
             break;
 
         default :
