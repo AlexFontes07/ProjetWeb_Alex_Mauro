@@ -217,7 +217,8 @@ function Register($Donnees){
     if($Donnees["password1"]==$Donnees["password2"]) {
         if (checkEmailTaken($Donnees["Email"]) == true) {
             addUser($Donnees);
-            $_SESSION["id_utilisateur"] = $Donnees["Email"];
+            $array=getUserDataBase();
+            $_SESSION["id_utilisateur"] = count($array);
             $_SESSION["Prenom"] = $Donnees["Prenom"];
             $_SESSION["Nom"] = $Donnees["Nom"];
             $_SESSION["Email"] = $Donnees["Email"];

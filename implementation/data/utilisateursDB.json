@@ -100,11 +100,11 @@
     },
     {
         "id_utilisateur": 12,
-        "nom": "Fontes",
-        "Prenom": "Alex",
-        "Email": "test@cpnv.ch",
-        "Password": "$2y$10$31DtAtlOeze8j1hSvQvpReRXYBZVzrKMyEUflLLjY9P7ld4CGpruK",
-        "Adresse": "Rue des cops",
-        "NPA": "1400"
+        "nom": "Personne",
+        "Prenom": "Pedro",
+        "Email": "mauro-alexandre.costa-dos-santos@cpnv.ch",
+        "Password": "$2y$10$BeEeBNKqafMes2tyP.\/o9eru0BkK13WqxkFndsHm1sYTyBmEnbQwK",
+        "Adresse": "Rue de la gare 12",
+        "NPA": "1450"
     }
 ]
