@@ -3,6 +3,7 @@ session_start();
 require 'controler/controler.php';
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
+    //switch avec tous les cas possibles dans le site
     switch ($action) {
         case "loginPage":
             openLogin();
@@ -32,16 +33,33 @@ if (isset($_GET['action'])) {
             openContact();
             break;
         case "SinglePage":
-            openSingle($_GET["id"]);
+            if(isset($_GET["id"])){
+                openSingle($_GET["id"]);
+            }else{
+                openHome();
+            }
+
             break;
         case "SingleContactPage":
-            openSingle_contact($_GET["id"]);
+            if(isset($_GET["id"])){
+                openSingle_contact($_GET["id"]);
+            }else{
+                openHome();
+            }
             break;
         case "LoginAction":
-            login($_POST);
+            if(isset($_POST["Password"])){
+                login($_POST);
+            }else{
+                openLogin();
+            }
             break;
         case "RegisterAction":
-            register($_POST);
+            if(isset($_POST["Password1"])){
+                register($_POST);
+            }else{
+                openRegister();
+            }
             break;
         case "Logout":
             logout();
@@ -53,16 +71,34 @@ if (isset($_GET['action'])) {
             require "view/new_annonce.php";
             break;
         case "update":
-            updateArticle($_GET["id"],$_POST);
+            if(isset($_POST)){
+                updateArticle($_GET["id"],$_POST);
+            }else{
+                showAnnonces();
+            }
+
             break;
         case"addItem":
-            addItem($_POST);
+            if(isset($_POST["type"])){
+                addItem($_POST);
+            }else{
+                require"view/new_annonce.php";
+            }
+
             break;
         case"sendmail":
-            if(!isset($_GET["id"])){
-                $_GET["id"]=0;
+            if(isset($_POST['message'])){
+                if(!isset($_GET["id"])){
+                    $_GET["id"]=0;
+                }
+                sendMail($_POST,$_GET["id"]);
+            }else{
+                if(!isset($_GET["id"])){
+                    openContact();
+                }else{
+                    openSingle_contact($_GET["id"]);
+                }
             }
-            sendMail($_POST,$_GET["id"]);
             break;
 
         default :

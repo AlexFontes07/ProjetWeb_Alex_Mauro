@@ -11,7 +11,7 @@
     {
         "id_utilisateur": 2,
         "nom": "Velin",
-        "Prenom": "Jhon",
+        "Prenom": "John",
         "Email": "consequat.dolor.vitae@loremegetmollis.com",
         "Password": "$2y$10$i94m567QKrPB1qwsRCDIv.xTlqmHTJWcWdinal0pQSffPr..IRG7e",
         "Adresse": "P.O. Box 147, 7905 Vitae Rd.",
@@ -106,5 +106,14 @@
         "Password": "$2y$10$i94m567QKrPB1qwsRCDIv.xTlqmHTJWcWdinal0pQSffPr..IRG7e",
         "Adresse": "123",
         "NPA": "123"
+    },
+    {
+        "id_utilisateur": 13,
+        "nom": null,
+        "Prenom": null,
+        "Email": null,
+        "Password": "$2y$10$vUr92KqvmQDY\/4JimaDzkO6ONaizlKhCtOPk5tyASKWrOPMQqOJMG",
+        "Adresse": null,
+        "NPA": null
     }
 ]

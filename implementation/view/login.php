@@ -29,8 +29,8 @@ $titre="RentASnow - Accueil";
                         <input name="Email" type="email" required>
                     </div>
                     <div>
-                        <span >Password</span>
-                        <input name="Mot de Passe" type="password" required>
+                        <span >Mot de Passe</span>
+                        <input name="Password" type="password" required>
                     </div>
                     <div class="clearfix"> </div>
                     <input type="submit" value="Se connecter">

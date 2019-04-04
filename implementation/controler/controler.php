@@ -7,6 +7,10 @@
  */
 
 require "model/model.php";
+/**
+ * function qu'ouvre la page single_contact.php avec les bonnes données
+ * @param $id id de l'annonce
+ */
 function openSingle_contact($id){
     if(isset($_SESSION["Email"])) {
         $array = getItemDataBase();
@@ -18,7 +22,10 @@ function openSingle_contact($id){
         openLogin();
     }
 }
-
+/**
+ * function qu'ouvre la page single.php avec les bonnes données
+ * @param $id est l'id de l'annonce
+ */
 function openSingle($id){
     $array=getItemDataBase();
     $id-=1;
@@ -35,10 +42,20 @@ function openSingle($id){
     }
     require "view/single.php";
 }
+
+/**
+ * function qu'ouvre la page register.php
+ */
 function openRegister(){
 
     require "view/register.php";
 }
+
+/**
+ * function qu'ouvre products.php avec le bon type d'annonces
+ * @param $type type de annonces qu'on veut afficher 1=achats, 2=locations, 3=services
+ * @param $page nombre de la page que doit etre affichée
+ */
 function openProducts($type,$page){
     $ShowingServices = array();
     $collCounter=0;
@@ -138,12 +155,22 @@ function openProducts($type,$page){
     require "view/products.php";
 
 }
+/**
+ * function qu'ouvre la page login.php
+ */
 function openLogin(){
     require "view/login.php";
 }
+/**
+ * function qu'ouvre la page home.php
+ */
 function openHome(){
     require "view/home.php";
 }
+
+/**
+ * function qu'ouvre la page contact.php
+ */
 function openContact(){
     if(isset($_SESSION["id_utilisateur"])){
         require "view/contact.php";
@@ -154,7 +181,8 @@ function openContact(){
 }
 
 /**
- * @param $Donnees
+ * function que ouvre une session à l'utilisateur
+ * @param $Donnees données qui viennent du formulaire rempli avant
  */
 function login($Donnees){
     $userId=-1;
@@ -173,7 +201,7 @@ function login($Donnees){
 }
 
 /**
- * function qu'ajoute l'utilisateur à la base de données
+ * function qu'ajoute l'utilisateur à la base de données et ouvre une session à l'utilisateur
  * @param $Donnees données qui viennent du formulaire rempli avant
  */
 function Register($Donnees){
