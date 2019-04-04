@@ -100,7 +100,7 @@ $titre="RentASnow - Accueil";
                         <label id="affDesclbl" for="affDesc">Description du produit</label>
                         <textarea cols="77" id="affDesc" name="Desc" style="display:block" rows="6" required> </textarea>
                         <label id="fileToUploadlbl" for="fileToUpload">Image du produit</label>
-                        <input type="file" id="fileToUpload" name="Upload" style="display:block" required>
+                        <input accept=".jpg"  type="file" id="fileToUpload" name="Upload" style="display:block"  required>
                         <br>
 
                         <div class="send">

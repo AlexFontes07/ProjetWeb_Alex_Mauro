@@ -30,11 +30,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="header-left">
                 <ul>
                     <?php if(!isset($_SESSION["Email"])){
-                        echo"<li ><a class=\"lock\"  href=\"index.php?action=loginPage\">Login</a></li>
+                        echo"<li ><a class=\"lock\"  href=\"index.php?action=loginPage\">Se connecter</a></li>
                         <li><a class=\"lock\" href=\"index.php?action=RegisterPage\"  >Créer un compte</a></li>";
                     }else{
                         echo'<li><a class="color1" href="index.php?action=annonces">Mes Annonces</a></li>';
-                        echo"<li><a class=\"lock\"  href=\"index.php?action=Logout\">Logout</a></li>";
+                        echo"<li><a class=\"lock\"  href=\"index.php?action=Logout\">Se déconnecter</a></li>";
                     }
                     ?>
                     <li>

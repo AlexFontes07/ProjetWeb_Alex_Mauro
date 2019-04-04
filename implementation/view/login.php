@@ -30,10 +30,10 @@ $titre="RentASnow - Accueil";
                     </div>
                     <div>
                         <span >Password</span>
-                        <input name="Password" type="password" required>
+                        <input name="Mot de Passe" type="password" required>
                     </div>
                     <div class="clearfix"> </div>
-                    <input type="submit" value="Login">
+                    <input type="submit" value="Se connecter">
                     <a href="index.php?action=RegisterPage"><input type="button" value="S'inscrire"></a>
                 </form>
             </div>

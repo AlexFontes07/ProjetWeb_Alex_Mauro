@@ -304,5 +304,14 @@
         "Type": 1,
         "Disponiblite": 1,
         "id_utilisateur": 12
+    },
+    {
+        "id_annonce": 35,
+        "Titre": "Un petit malautrus d'alexandre fontes",
+        "Description": " Il mange tout ce cyborg, il me coute trop cher",
+        "Prix": "0",
+        "Type": 1,
+        "Disponiblite": 1,
+        "id_utilisateur": 12
     }
 ]

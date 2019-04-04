@@ -152,6 +152,10 @@ function openContact(){
     }
 
 }
+
+/**
+ * @param $Donnees
+ */
 function login($Donnees){
     $userId=-1;
     $userId=getUserId($Donnees["Email"],$Donnees["Password"]);
@@ -167,6 +171,11 @@ function login($Donnees){
         require "view/login.php";
     }
 }
+
+/**
+ * function qu'ajoute l'utilisateur à la base de données
+ * @param $Donnees données qui viennent du formulaire rempli avant
+ */
 function Register($Donnees){
     if($Donnees["password1"]==$Donnees["password2"]) {
         if (checkEmailTaken($Donnees["Email"]) == true) {
@@ -185,11 +194,18 @@ function Register($Donnees){
         require "view/register.php";
     }
 }
+
+/**
+ * function que déconnecte l'utilisateur
+ */
 function logout(){
     session_unset();
     require "view/home.php";
 }
 
+/**
+ * function qu'affiche toutes les annonces des utilisateurs connectés
+ */
 function showAnnonces(){
     $array=getItemDataBase();
     $listeAnnonces="";
@@ -235,6 +251,12 @@ function addUser($data){
     updateUsers($array);
 
 }
+
+/**
+ * Function que change les information d'un article
+ * @param $id id de l'article a modifier
+ * @param $donnees données à modifier
+ */
 function updateArticle($id,$donnees){
 
     $array=getItemDataBase();
@@ -261,6 +283,11 @@ function updateArticle($id,$donnees){
     updateItems($array);
     showAnnonces();
 }
+
+/**
+ * function que permet d'ajouter une annonce à la base de données
+ * @param $donnees  informations du formulaire pour ajouter un item
+ */
 function addItem($donnees){
     $array=getItemDataBase();
     $type=0;
@@ -349,6 +376,13 @@ function addItem($donnees){
     updateItems($array);
     showAnnonces();
 }
+
+/**
+ * Function qui envoie le mail au bon utilisateur
+ * @param $donnees contient toutes les informations remplies par l'utilisateur avant d'envoyer le mail
+ * @param $id id de l'utilisateur a qui le mail sera envoyé si est a 0 le mail sera envoyé au support du site
+ *
+ */
 function sendMail($donnees,$id)
 {
     $email="";

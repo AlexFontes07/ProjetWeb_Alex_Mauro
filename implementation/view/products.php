@@ -17,8 +17,14 @@ $titre="RentASnow - Accueil";
 ?>
 <!--content-->
 <!---->
-		<div class="content">
+		<div class="product">
 			<div class="container">
+                <div class="col-md-3 product-price">
+                    <div class=" rsidebar span_1_of_left">
+                        <ul class="menu">
+                        </ul>
+                    </div>
+                </div>
 				<div class="col-md-9 product1">
 		           <?php print $itemList?>
 				</div>

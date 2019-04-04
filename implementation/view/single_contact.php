@@ -17,19 +17,22 @@ $titre="RentASnow - Accueil";
 ?>
 <!--content-->
 
+<div class="contact">
 
-<div class="container">
-    <div class="account">
-        <h1><?php echo $array[$id]["Titre"];?></h1>
-        <div class="account-pass">
-            <div class="col-md-8 account-top">
+    <div class="container">
+        <h1>Contact</h1>
+        <div class="contact-form">
+
+            <div class="col-md-8 contact-grid">
                 <form action="index.php?action=sendmail&id=<?php echo $array[$id]["id_annonce"];?>" method="post">
                     <input type="text" value="<?php echo $venteur;?>" disabled>
 
                     <input type="text" value="<?php echo $email;?>" disabled>
 
                     <textarea cols="77" rows="6" value=" " name="message" onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
-                    <input type="submit" value="Envoyer">
+                    <div class="send">
+                        <input type="submit" value="Envoyer">
+                    </div>
                 </form>
             </div>
             <div class="col-md-4 left-account ">
@@ -39,10 +42,10 @@ $titre="RentASnow - Accueil";
                 <p><?php echo $array[$id]["Description"];?></p>
             </div>
             <div class="clearfix"> </div>
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>
 <!--//content-->
 <?php
 $contenu = ob_get_clean();
