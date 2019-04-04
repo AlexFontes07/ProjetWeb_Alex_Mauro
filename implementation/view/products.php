@@ -25,7 +25,7 @@ $titre="RentASnow - Accueil";
                         </ul>
                     </div>
                 </div>
-				<div class="col-md-9 product1">
+				<div class="col-md-12 product1">
 		           <?php print $itemList?>
 				</div>
 		<div class="clearfix"> </div>
