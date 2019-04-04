@@ -262,7 +262,7 @@
     },
     "29": {
         "id_annonce": 30,
-        "Titre": "Aide au d\u00e9m\u00e9nagement",
+        "Titre": "Aide au demenagement",
         "Description": "Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis",
         "Prix": 40,
         "Type": 3,
@@ -299,16 +299,10 @@
     "33": {
         "id_annonce": 34,
         "Titre": "Nintendo switch",
-        "Description": " bonne qualite",
+        "Description": " Bonne qualité",
         "Prix": "200",
         "Type": 1,
         "Disponiblite": 1,
         "id_utilisateur": 12
-    },
-    "-1": {
-        "Titre": null,
-        "Prix": null,
-        "Description": null,
-        "Disponiblite": 0
     }
 }

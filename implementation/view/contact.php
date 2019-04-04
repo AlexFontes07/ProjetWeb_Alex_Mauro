@@ -1,19 +1,13 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <?php
 /**
  * Created by PhpStorm.
- * User: Pascal.BENZONANA
- * Date: 08.05.2017
+ * User: Alexandre Fontes
+ * Date: 20.03.2019
  * Time: 09:16
  */
 // tampon de flux stocké en mémoire
 ob_start();
-$titre="RentASnow - Accueil";
+$titre="Accueil";
 ?>
 <!--content-->
 <div class="contact">
@@ -21,23 +15,19 @@ $titre="RentASnow - Accueil";
 			<div class="container">
 				<h1>Contact</h1>
 			<div class="contact-form">
-				
 				<div class="col-md-8 contact-grid">
 					<form method="post" action="index.php?action=sendmail">
 						<input type="text" name="info" value="<?php echo $_SESSION["Nom"]. " " .$_SESSION["Prenom"];?>" disabled>
-					
 						<input type="text" name="email" value="<?php echo $_SESSION["Email"];?>" disabled>
 						<input type="text" name="sujet" value="Sujet" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Sujet';}" required>
-						
 						<textarea cols="77" rows="6" name="message" value=" " onfocus="this.value='';" onblur="if (this.value == '') {this.value = 'Message';}" required>Message</textarea>
 						<div class="send">
 							<input type="submit" value="Envoyer">
 						</div>
 					</form>
-
 				</div>
-				<div class="col-md-4 contact-in">
 
+				<div class="col-md-4 contact-in">
 						<div class="address-more">
 						<h4>Adresse</h4>
 							<p>BuyHard,</p>
@@ -52,7 +42,6 @@ $titre="RentASnow - Accueil";
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-		
 	</div>
 <!--//content-->
 <?php

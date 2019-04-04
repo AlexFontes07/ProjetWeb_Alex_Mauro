@@ -1,13 +1,13 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Pascal.BENZONANA
- * Date: 08.05.2017
+ * User: Alexandre Fontes
+ * Date: 20.03.2019
  * Time: 09:16
  */
 // tampon de flux stocké en mémoire
 ob_start();
-$titre="RentASnow - Accueil";
+$titre="Accueil";
 ?><!--content-->
 <div class="banner">
     <div class="container">

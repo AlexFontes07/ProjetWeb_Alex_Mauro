@@ -2,13 +2,14 @@
 /**
  * Created by PhpStorm.
  * User: Mauro-Alexandre.COST
- * Date: 11.03.2019
+ * Date: 04.04.2019
  * Time: 08:14
  */
 
 require "model/model.php";
+
 /**
- * function qu'ouvre la page single_contact.php avec les bonnes données
+ * fonction qui ouvre la page single_contact.php avec les bonnes données
  * @param $id id de l'annonce
  */
 function openSingle_contact($id){
@@ -22,8 +23,9 @@ function openSingle_contact($id){
         openLogin();
     }
 }
+
 /**
- * function qu'ouvre la page single.php avec les bonnes données
+ * fonction qui ouvre la page single.php avec les bonnes données
  * @param $id est l'id de l'annonce
  */
 function openSingle($id){
@@ -44,7 +46,7 @@ function openSingle($id){
 }
 
 /**
- * function qu'ouvre la page register.php
+ * fonction qui ouvre la page register.php
  */
 function openRegister(){
 
@@ -52,9 +54,9 @@ function openRegister(){
 }
 
 /**
- * function qu'ouvre products.php avec le bon type d'annonces
+ * fonction qui ouvre products.php avec le bon type d'annonces
  * @param $type type de annonces qu'on veut afficher 1=achats, 2=locations, 3=services
- * @param $page nombre de la page que doit etre affichée
+ * @param $page nombre de la page qui doit être affichée
  */
 function openProducts($type,$page){
     $ShowingServices = array();
@@ -62,6 +64,7 @@ function openProducts($type,$page){
     $itemCounter=0;
     $itemList='<div class="bottom-product">';
     $array=getItemDataBase();
+
     switch($type){
         case 1:
             $typeText="listItemsA";
@@ -73,6 +76,7 @@ function openProducts($type,$page){
             $typeText="listServices";
             break;
     }
+
     foreach($array as $item){
         if($item["Type"]==$type) {
             if($item["Disponiblite"]!=0) {
@@ -127,16 +131,18 @@ function openProducts($type,$page){
 
         }
     }
+
     $buttonclass="";
     if($page==1) {
         $buttonclass = 'class="disabled"';
     }else{
         $buttonclass='';
     }
+
     $buttonpage=$page-1;
     $bottombuttons='<li '.$buttonclass.'><a href="index.php?action='.$typeText.'&page='.$buttonpage.'" aria-label="Previous"><span aria-hidden="true">«</span></a></li>';
-
     $nbbuttons=($itemCounter/9)+1;
+
     for ($i=1;$i<$nbbuttons;$i++){
         if($page==$i){
             $buttonclass='class="active"';
@@ -145,43 +151,46 @@ function openProducts($type,$page){
         }
         $bottombuttons=$bottombuttons.'<li '.$buttonclass.'><a href="index.php?action='.$typeText.'&page='.$i.'">'.$i.'<span class="sr-only"></span></a></li>';
     }
+
     if($page==$nbbuttons){
         $buttonclass='class="disabled"';
     }else{
         $buttonclass='';
     }
+
     $buttonpage=$page+1;
     $bottombuttons=$bottombuttons.'<li '.$buttonclass.'> <a href="index.php?action='.$typeText.'&page='.$buttonpage.'" aria-label="Next"><span aria-hidden="true">»</span> </a> </li>';
     require "view/products.php";
 
 }
 /**
- * function qu'ouvre la page login.php
+ * fonction qui ouvre la page login.php
  */
 function openLogin(){
     require "view/login.php";
 }
+
 /**
- * function qu'ouvre la page home.php
+ * fonction qui ouvre la page home.php
  */
 function openHome(){
     require "view/home.php";
 }
 
 /**
- * function qu'ouvre la page contact.php
+ * fonction qui ouvre la page contact.php
  */
-function openContact(){
-    if(isset($_SESSION["id_utilisateur"])){
+function openContact()
+{
+    if (isset($_SESSION["id_utilisateur"])) {
         require "view/contact.php";
-    }else{
+    } else {
         openLogin();
     }
-
 }
 
 /**
- * function que ouvre une session à l'utilisateur
+ * fonction que ouvre une session à l'utilisateur
  * @param $Donnees données qui viennent du formulaire rempli avant
  */
 function login($Donnees){
@@ -201,7 +210,7 @@ function login($Donnees){
 }
 
 /**
- * function qu'ajoute l'utilisateur à la base de données et ouvre une session à l'utilisateur
+ * fonction qui ajoute l'utilisateur à la base de données et ouvre une session à l'utilisateur
  * @param $Donnees données qui viennent du formulaire rempli avant
  */
 function Register($Donnees){
@@ -224,7 +233,7 @@ function Register($Donnees){
 }
 
 /**
- * function que déconnecte l'utilisateur
+ * fonction qui déconnecte l'utilisateur
  */
 function logout(){
     session_unset();
@@ -232,40 +241,46 @@ function logout(){
 }
 
 /**
- * function qu'affiche toutes les annonces des utilisateurs connectés
+ * fonction qui affiche toutes les annonces des utilisateurs connectés
  */
-function showAnnonces(){
-    $array=getItemDataBase();
-    $listeAnnonces="";
-    foreach($array as $item){
-        if($item["id_utilisateur"]==$_SESSION["id_utilisateur"]){
-            $listeAnnonces=$listeAnnonces.'<tr><form enctype="multipart/form-data" action="index.php?action=update&id='.$item["id_annonce"].'" method="post"><th>'.$item["id_annonce"].'</th>';
-            $listeAnnonces=$listeAnnonces.'<th>'.$item["Type"].'</th>';
-            if($item["Type"]==3){
-                $modifiable=" disabled";
-            }else{
-                $modifiable="";
+function showAnnonces()
+{
+    $array = getItemDataBase();
+    $listeAnnonces = "";
+    foreach ($array as $item) {
+        if ($item["id_utilisateur"] == $_SESSION["id_utilisateur"]) {
+            $listeAnnonces = $listeAnnonces . '<tr><form enctype="multipart/form-data" action="index.php?action=update&id=' . $item["id_annonce"] . '" method="post"><th>' . $item["id_annonce"] . '</th>';
+            $listeAnnonces = $listeAnnonces . '<th>' . $item["Type"] . '</th>';
+            if ($item["Type"] == 3) {
+                $modifiable = " disabled";
+            } else {
+                $modifiable = "";
             }
-            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" name="Titre" value="'.$item["Titre"].'" type="text"'.$modifiable.'></th>';
-            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" name="Prix" value="'.$item["Prix"].'" type="number"'.$modifiable.'></th>';
-            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" name="Desc" value="'.$item["Description"].'" type="text"'.$modifiable.'></th>';
-            if($item["Type"]==3){
-                $listeAnnonces=$listeAnnonces."<th>impossible de changer l'image</th>";
-            }else{
-                $listeAnnonces=$listeAnnonces.'<th><input accept=".jpg" type="file" name="Upload" id="fileToUpload"></th>';
+            $listeAnnonces = $listeAnnonces . '<th><input class="inputCenter" name="Titre" value="' . $item["Titre"] . '" type="text"' . $modifiable . '></th>';
+            $listeAnnonces = $listeAnnonces . '<th><input class="inputCenter" name="Prix" value="' . $item["Prix"] . '" type="number"' . $modifiable . '></th>';
+            $listeAnnonces = $listeAnnonces . '<th><input class="inputCenter" name="Desc" value="' . $item["Description"] . '" type="text"' . $modifiable . '></th>';
+            if ($item["Type"] == 3) {
+                $listeAnnonces = $listeAnnonces . "<th>impossible de changer l'image</th>";
+            } else {
+                $listeAnnonces = $listeAnnonces . '<th><input accept=".jpg" type="file" name="Upload" id="fileToUpload"></th>';
             }
 
-            if($item["Disponiblite"]==1){
-                $chkstatus=" Checked";
-            }else{
-                $chkstatus="";
+            if ($item["Disponiblite"] == 1) {
+                $chkstatus = " Checked";
+            } else {
+                $chkstatus = "";
             }
-            $listeAnnonces=$listeAnnonces.'<th><input class="inputCenter" type="checkbox" name="Chk" '.$chkstatus.'>Cocher si dispo.</th>';
-            $listeAnnonces=$listeAnnonces.'<th><button type="submit" value="Submit">Enregistrer</button></th></form></tr>';
+            $listeAnnonces = $listeAnnonces . '<th><input class="inputCenter" type="checkbox" name="Chk" ' . $chkstatus . '>Cocher si dispo.</th>';
+            $listeAnnonces = $listeAnnonces . '<th><button type="submit" value="Submit">Enregistrer</button></th></form></tr>';
         }
     }
     require "view/annonces.php";
 }
+
+/**
+ * fonction qui ajoute un utilisateur
+ * @param $data données qui viennent du formulaire d'inscription
+ */
 function addUser($data){
     $array=getUserDataBase();
     $userID=count($array);
@@ -281,7 +296,7 @@ function addUser($data){
 }
 
 /**
- * Function que change les information d'un article
+ * fonction qui change les informations d'un article
  * @param $id id de l'article a modifier
  * @param $donnees données à modifier
  */
@@ -313,8 +328,8 @@ function updateArticle($id,$donnees){
 }
 
 /**
- * function que permet d'ajouter une annonce à la base de données
- * @param $donnees  informations du formulaire pour ajouter un item
+ * fonction qui permet d'ajouter une annonce à la base de données
+ * @param $donnees  informations du formulaire pour ajouter un article
  */
 function addItem($donnees){
     $array=getItemDataBase();
@@ -350,7 +365,7 @@ function addItem($donnees){
                 $array[$id]["Prix"]=35;
                 break;
             case 2:
-                $array[$id]["Titre"]="Aide au Déménagement";
+                $array[$id]["Titre"]="Aide au demenagement";
                 $array[$id]["Description"]="Morbi non sapien molestie orci tincidunt adipiscing. Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis";
                 $array[$id]["Prix"]=40;
                 break;
@@ -406,7 +421,7 @@ function addItem($donnees){
 }
 
 /**
- * Function qui envoie le mail au bon utilisateur
+ * fonction qui envoie le mail au bon utilisateur
  * @param $donnees contient toutes les informations remplies par l'utilisateur avant d'envoyer le mail
  * @param $id id de l'utilisateur a qui le mail sera envoyé si est a 0 le mail sera envoyé au support du site
  *
@@ -429,7 +444,6 @@ function sendMail($donnees,$id)
         $email=$arrayUsers[$arrayProducts[$id-1]["id_utilisateur"]-1]["Email"];
         $subject='Reponse a votre annonce : "'.$arrayProducts[$id-1]["Titre"].'"';
     }
-
 
     mail($email, $subject, $donnees['message'], $headers);
 

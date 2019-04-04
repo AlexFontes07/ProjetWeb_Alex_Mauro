@@ -1,14 +1,8 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <?php
 /**
  * Created by PhpStorm.
- * User: Pascal.BENZONANA
- * Date: 08.05.2017
+ * User: Alexandre Fontes
+ * Date: 20.03.2019
  * Time: 09:16
  */
 // tampon de flux stocké en mémoire
@@ -81,6 +75,7 @@ $titre="Objet";
 
     </div>
 </div>
+
 <!--//content-->
 <?php
 $contenu = ob_get_clean();

@@ -100,20 +100,11 @@
     },
     {
         "id_utilisateur": 12,
-        "nom": "Santos",
-        "Prenom": "mauro",
-        "Email": "mauro-alexandre.costa-dos-santos@cpnv.ch",
-        "Password": "$2y$10$i94m567QKrPB1qwsRCDIv.xTlqmHTJWcWdinal0pQSffPr..IRG7e",
-        "Adresse": "123",
-        "NPA": "123"
-    },
-    {
-        "id_utilisateur": 13,
-        "nom": null,
-        "Prenom": null,
-        "Email": null,
-        "Password": "$2y$10$vUr92KqvmQDY\/4JimaDzkO6ONaizlKhCtOPk5tyASKWrOPMQqOJMG",
-        "Adresse": null,
-        "NPA": null
+        "nom": "Fontes",
+        "Prenom": "Alex",
+        "Email": "test@cpnv.ch",
+        "Password": "$2y$10$31DtAtlOeze8j1hSvQvpReRXYBZVzrKMyEUflLLjY9P7ld4CGpruK",
+        "Adresse": "Rue des cops",
+        "NPA": "1400"
     }
 ]
